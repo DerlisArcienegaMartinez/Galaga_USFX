@@ -17,14 +17,6 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 
 }
 
-
-
-/*void ANaveEnemigaCaza::Disparar()
-{
-
-
-}*/
-
 // Called every frame
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
@@ -46,6 +38,18 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 
 	// Establece la nueva posición del actor
 	SetActorLocation(NuevaPosicion);
+}
+
+void ANaveEnemigaCaza::Destruirse(float DeltaTime)
+{
+}
+
+void ANaveEnemigaCaza::Escapar(float DeltaTIme)
+{
+}
+
+void ANaveEnemigaCaza::Atacar(float DeltaTime)
+{
 }
 
 // void ANaveEnemigaCaza::MoverAleatoriamente(float DeltaTime)

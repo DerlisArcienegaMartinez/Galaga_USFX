@@ -16,14 +16,28 @@ class GALAGA_USFX_API ANaveEnemigaCaza : public ANaveEnemiga
 
 private:
 	int cantidadBombas;
+	float tamanioNave;
+	int energiaNave;
+	float velocidadDisp;
+	int cantidadMuniciones;
+	float velocidadNave;
 
 
 public:
-	
+
 	FORCEINLINE int GetCantidadBombas()const { return cantidadBombas; }
+	FORCEINLINE float GetTamanioNave()const { return tamanioNave; }
+	FORCEINLINE int GetEnergiaNave()const { return energiaNave; }
+	FORCEINLINE float GetVelocidadDisp()const { return velocidadDisp; }
+	FORCEINLINE int GetCantidadMuniciones()const { return cantidadMuniciones; }
+	FORCEINLINE float GetVelocidadNave()const { return velocidadNave; }
 
 	FORCEINLINE void SetCantidadBombas(int _cantidadBombas) { cantidadBombas = _cantidadBombas; }
-
+	FORCEINLINE void SetTamanioNave(float _tamanioNave) { tamanioNave = _tamanioNave; }
+	FORCEINLINE void SetEnergiaNave(int _energiaNave) { energiaNave = _energiaNave; }
+	FORCEINLINE void SetVelocidadDisp(float _velocidadDisp) { velocidadDisparo = _velocidadDisp; }
+	FORCEINLINE void SetCantidadMuniciones(int _cantidadMuniciones) { cantidadMuniciones = _cantidadMuniciones; }
+	FORCEINLINE void SetVelocidadNave(float _velocidadaNave) { velocidadNave = _velocidadaNave; }
 
 protected:
 	//Se llama cuando el juego comienza o cuando se genera
@@ -36,6 +50,8 @@ public:
 
 public:
 	virtual void Mover(float DeltaTime);
-	//virtual void Disparar();
+	virtual void Destruirse(float DeltaTime);
+	virtual void Escapar(float DeltaTIme);
+	virtual void Atacar(float DeltaTime);
 
 };
