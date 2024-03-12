@@ -3,6 +3,14 @@
 
 #include "NaveEnemigaTransporte.h"
 
+// Called when the game starts or when spawned
+void ANaveEnemigaTransporte::BeginPlay()
+{
+	Super::BeginPlay();
+
+}
+
+
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -32,3 +40,4 @@ void ANaveEnemigaTransporte::Mover(float DeltaTime)
 	SetActorLocation(NuevaPosicion);
 }
 
+//void ANaveEnemigaTransporte::Mover(float DeltaTime)

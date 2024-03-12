@@ -14,11 +14,30 @@ class GALAGA_USFX_API ANaveEnemigaTransporte : public ANaveEnemiga
 {
 	GENERATED_BODY()
 
+private:
+	float capacidadCargaPeso;
+	float capacidadCargaVolumen;
+
+public:
+	FORCEINLINE float GetCapacidadCargaPeso()const { return capacidadCargaPeso; }
+	FORCEINLINE float GetCapacidadCargaVolumen()const { return capacidadCargaVolumen; }
+
+	FORCEINLINE void SetCapacidadCargaPeso(float capacidadPeso) { capacidadCargaPeso = capacidadPeso; }
+	FORCEINLINE void SetCapacidadCargaVolumen(float capacidadVolumen) { capacidadCargaVolumen = capacidadVolumen; }
+
+
 protected:
-	virtual void Tick(float DeltaTime) override;
+	//Se llama cuando el juego comienza o cuando se genera
+	virtual void BeginPlay() override;
 
 public:
 	ANaveEnemigaTransporte();
-	virtual void Mover(float DeltaTime);
+
+	//LLamar a cada fotograma
+	virtual void Tick(float DeltaTime) override;
+
+public:
 	
+	virtual void Mover(float DeltaTime);
+	//virtual void Disparar(float DeltaTime);
 };

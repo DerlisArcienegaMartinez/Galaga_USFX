@@ -17,6 +17,14 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 
 }
 
+
+
+/*void ANaveEnemigaCaza::Disparar()
+{
+
+
+}*/
+
 // Called every frame
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
