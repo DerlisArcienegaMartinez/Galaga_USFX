@@ -58,7 +58,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigaEspia); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANaveEnemigaEspia)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaEspia_h_15_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaEspia_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__velocidadMovimiento() { return STRUCT_OFFSET(ANaveEnemigaEspia, velocidadMovimiento); } \
+	FORCEINLINE static uint32 __PPO__direccionMovimiento() { return STRUCT_OFFSET(ANaveEnemigaEspia, direccionMovimiento); }
+
+
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaEspia_h_12_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaEspia_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

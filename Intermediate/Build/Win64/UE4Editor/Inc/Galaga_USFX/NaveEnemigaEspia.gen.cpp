@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaEspia() {}
 	GALAGA_USFX_API UClass* Z_Construct_UClass_ANaveEnemigaEspia();
 	GALAGA_USFX_API UClass* Z_Construct_UClass_ANaveEnemiga();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
 	void ANaveEnemigaEspia::StaticRegisterNativesANaveEnemigaEspia()
 	{
@@ -31,6 +32,15 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaEspia() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_direccionMovimiento_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_direccionMovimiento;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_velocidadMovimiento_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_velocidadMovimiento;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +55,22 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaEspia() {}
 		{ "ModuleRelativePath", "NaveEnemigaEspia.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_direccionMovimiento_MetaData[] = {
+		{ "ModuleRelativePath", "NaveEnemigaEspia.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_direccionMovimiento = { "direccionMovimiento", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigaEspia, direccionMovimiento), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_direccionMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_direccionMovimiento_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_velocidadMovimiento_MetaData[] = {
+		{ "ModuleRelativePath", "NaveEnemigaEspia.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_velocidadMovimiento = { "velocidadMovimiento", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigaEspia, velocidadMovimiento), METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_velocidadMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_velocidadMovimiento_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANaveEnemigaEspia_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_direccionMovimiento,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANaveEnemigaEspia_Statics::NewProp_velocidadMovimiento,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANaveEnemigaEspia_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANaveEnemigaEspia>::IsAbstract,
 	};
@@ -54,11 +80,11 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaEspia() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ANaveEnemigaEspia_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaEspia_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaEspia_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaEspia_Statics::Class_MetaDataParams))
@@ -72,7 +98,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaEspia() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaEspia, 1239050624);
+	IMPLEMENT_CLASS(ANaveEnemigaEspia, 2598218364);
 	template<> GALAGA_USFX_API UClass* StaticClass<ANaveEnemigaEspia>()
 	{
 		return ANaveEnemigaEspia::StaticClass();

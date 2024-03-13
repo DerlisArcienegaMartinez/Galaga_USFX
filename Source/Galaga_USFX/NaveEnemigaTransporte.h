@@ -17,14 +17,34 @@ class GALAGA_USFX_API ANaveEnemigaTransporte : public ANaveEnemiga
 private:
 	float capacidadCargaPeso;
 	float capacidadCargaVolumen;
+	float blindaje;//protege la nave de daños del player
+	float velocidad;
+	float maniobrabilidad;//Evitar obstaculos
+	float sistemaDefensa;
+	float combustible;//cuanto de combustible tiene la nave
+	float velocidadEscape;//evitar ataques
+
+
+
 
 public:
 	FORCEINLINE float GetCapacidadCargaPeso()const { return capacidadCargaPeso; }
 	FORCEINLINE float GetCapacidadCargaVolumen()const { return capacidadCargaVolumen; }
+	FORCEINLINE float GetBlindaje()const { return blindaje; }
+	FORCEINLINE float GetVelocidad()const { return velocidad; }
+	FORCEINLINE float GetManibrabilidad()const { return maniobrabilidad; }
+	FORCEINLINE float GetSistemaDefensa()const { return sistemaDefensa; }
+	FORCEINLINE float GetCombustible()const { return combustible; }
+	FORCEINLINE float GetVelocidadEscape()const { return velocidadEscape; }
 
-	FORCEINLINE void SetCapacidadCargaPeso(float capacidadPeso) { capacidadCargaPeso = capacidadPeso; }
+	FORCEINLINE void SetCapacidadCarga(float capacidadCarga) { capacidadCargaPeso = capacidadCarga; }
 	FORCEINLINE void SetCapacidadCargaVolumen(float capacidadVolumen) { capacidadCargaVolumen = capacidadVolumen; }
-
+	FORCEINLINE void SetBlindaje(float _blindaje) { blindaje = _blindaje; }
+	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
+	FORCEINLINE void SetManiobrabilidad(float maniobra) { maniobrabilidad = maniobra; }
+	FORCEINLINE void SetSistemaDefensa(float defensa) { sistemaDefensa = defensa; }
+	FORCEINLINE void SetCombustible(float _combustible) { combustible = _combustible; }
+	FORCEINLINE void SetVelocidadEscape(float escape) { velocidadEscape = escape; }
 
 protected:
 	//Se llama cuando el juego comienza o cuando se genera
@@ -39,5 +59,8 @@ public:
 public:
 	
 	virtual void Mover(float DeltaTime);
-	//virtual void Disparar(float DeltaTime);
+	virtual void Destruirse(float DeltaTime);
+	virtual void Escapar(float DeltaTIme);
+	virtual void Atacar(float DeltaTime);
+
 };
