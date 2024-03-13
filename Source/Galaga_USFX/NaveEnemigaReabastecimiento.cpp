@@ -35,3 +35,7 @@ void ANaveEnemigaReabastecimiento::Escapar(float DeltaTIme)
 void ANaveEnemigaReabastecimiento::Atacar(float DeltaTime)
 {
 }
+
+void ANaveEnemigaReabastecimiento::ReabastecimientoVuelo(bool DeltaTime)
+{
+}

@@ -52,4 +52,19 @@ void ANaveEnemigaTransporte::Atacar(float DeltaTime)
 {
 }
 
-//void ANaveEnemigaTransporte::Mover(float DeltaTime)
+void ANaveEnemigaTransporte::RecoleccionRecursos(bool DeltaTime)
+{
+}
+
+void ANaveEnemigaTransporte::MantenimientoNaves(bool DeltaTime)
+{
+}
+
+void ANaveEnemigaTransporte::TransporteTropas(bool DeltaTime)
+{
+}
+
+void ANaveEnemigaTransporte::OperacionRescate(bool DeltaTime)
+{
+}
+

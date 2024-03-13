@@ -48,3 +48,15 @@ void ANaveEnemigaNodriza::Escapar(float DeltaTIme)
 void ANaveEnemigaNodriza::Atacar(float DeltaTime)
 {
 }
+
+void ANaveEnemigaNodriza::RecoleccionRecursos(bool DeltaTime)
+{
+}
+
+void ANaveEnemigaNodriza::MantenimientoNaves(bool DeltaTime)
+{
+}
+
+void ANaveEnemigaNodriza::DespliegueNavesAuxiliares(float DeltaTime)
+{
+}

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Galaga_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2302681A-7F79-4F0C-AAC3-55722CD23C29}</UniqueIdentifier>
+      <UniqueIdentifier>{7E8EF390-2939-4922-9F86-0F1A1B2CEEF7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Galaga_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{98BC0A2A-59E7-498D-B90C-04693382DA1F}</UniqueIdentifier>
+      <UniqueIdentifier>{C4CFAD33-8677-4290-9EC2-582DC0AF40BA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,8 +32,20 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Galaga_USFX">
-      <UniqueIdentifier>{1618FD51-65D9-4DFA-AAFE-6479C957AE04}</UniqueIdentifier>
+      <UniqueIdentifier>{5825B5E3-7CCA-462C-BAB9-4069B470052C}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Galaga_USFX\Caza01.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Caza01.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\Caza02.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Caza02.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Galaga_USFX\Galaga_USFX.Build.cs">
       <Filter>Source\Galaga_USFX</Filter>
     </None>
@@ -95,6 +107,18 @@
       <Filter>Source\Galaga_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX\NaveEnemigaTransporte.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\Transporte01.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Transporte01.h">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Galaga_USFX\Transporte02.cpp">
+      <Filter>Source\Galaga_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Transporte02.h">
       <Filter>Source\Galaga_USFX</Filter>
     </ClInclude>
   </ItemGroup>

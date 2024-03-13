@@ -56,6 +56,7 @@ public:
 	virtual void Destruirse(float DeltaTime);
 	virtual void Escapar(float DeltaTIme);
 	virtual void Atacar(float DeltaTime);
+	virtual void ReabastecimientoVuelo(bool DeltaTime);
 
 };
 
