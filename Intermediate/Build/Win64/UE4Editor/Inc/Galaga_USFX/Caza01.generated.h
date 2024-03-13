@@ -36,7 +36,7 @@ public: \
 
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ACaza01(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ACaza01(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACaza01) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ACaza01); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACaza01); \
@@ -48,8 +48,6 @@ public:
 
 
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ACaza01() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACaza01(ACaza01&&); \
@@ -60,7 +58,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACaza01); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACaza01)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__VelocidadMovimiento() { return STRUCT_OFFSET(ACaza01, VelocidadMovimiento); } \
+	FORCEINLINE static uint32 __PPO__DireccionMovimiento() { return STRUCT_OFFSET(ACaza01, DireccionMovimiento); }
+
+
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_12_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

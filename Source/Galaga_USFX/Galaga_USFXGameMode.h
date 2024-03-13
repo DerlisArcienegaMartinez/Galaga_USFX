@@ -34,6 +34,8 @@ public:
 
 	ANaveEnemigaEspia* NaveEnemigaEspia01;
 	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
+	ANaveEnemigaEspia* NaveEnemigaEspia02;
+	ANaveEnemigaNodriza* NaveEnemigaNodriza02;
 
 };
 

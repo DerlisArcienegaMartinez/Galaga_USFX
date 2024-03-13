@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeCaza01() {}
 	GALAGA_USFX_API UClass* Z_Construct_UClass_ACaza01();
 	GALAGA_USFX_API UClass* Z_Construct_UClass_ANaveEnemigaCaza();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
 	void ACaza01::StaticRegisterNativesACaza01()
 	{
@@ -31,6 +32,15 @@ void EmptyLinkFunctionForGeneratedCodeCaza01() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DireccionMovimiento_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_DireccionMovimiento;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_VelocidadMovimiento_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_VelocidadMovimiento;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -45,6 +55,22 @@ void EmptyLinkFunctionForGeneratedCodeCaza01() {}
 		{ "ModuleRelativePath", "Caza01.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACaza01_Statics::NewProp_DireccionMovimiento_MetaData[] = {
+		{ "ModuleRelativePath", "Caza01.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACaza01_Statics::NewProp_DireccionMovimiento = { "DireccionMovimiento", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACaza01, DireccionMovimiento), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ACaza01_Statics::NewProp_DireccionMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACaza01_Statics::NewProp_DireccionMovimiento_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACaza01_Statics::NewProp_VelocidadMovimiento_MetaData[] = {
+		{ "ModuleRelativePath", "Caza01.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACaza01_Statics::NewProp_VelocidadMovimiento = { "VelocidadMovimiento", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACaza01, VelocidadMovimiento), METADATA_PARAMS(Z_Construct_UClass_ACaza01_Statics::NewProp_VelocidadMovimiento_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACaza01_Statics::NewProp_VelocidadMovimiento_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACaza01_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACaza01_Statics::NewProp_DireccionMovimiento,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACaza01_Statics::NewProp_VelocidadMovimiento,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACaza01_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACaza01>::IsAbstract,
 	};
@@ -54,11 +80,11 @@ void EmptyLinkFunctionForGeneratedCodeCaza01() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ACaza01_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ACaza01_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ACaza01_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ACaza01_Statics::Class_MetaDataParams))
@@ -72,7 +98,7 @@ void EmptyLinkFunctionForGeneratedCodeCaza01() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACaza01, 1696946519);
+	IMPLEMENT_CLASS(ACaza01, 4185601281);
 	template<> GALAGA_USFX_API UClass* StaticClass<ACaza01>()
 	{
 		return ACaza01::StaticClass();

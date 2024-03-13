@@ -4,7 +4,7 @@
 #include "Caza02.h"
 
 // Called when the game starts or when spawned
-void ANaveEnemigaCaza::BeginPlay()
+void ACaza02::BeginPlay()
 {
 	Super::BeginPlay();
 

@@ -18,7 +18,7 @@ void ANaveEnemigaEspia::Tick(float DeltaTime)
 ANaveEnemigaEspia::ANaveEnemigaEspia()
 {
 
-	velocidadMovimiento = 105.0f;
+	velocidadMovimiento = 50.0f;
 	direccionMovimiento = FVector(1.0f, 0.0f, 0.0f);
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane'"));
