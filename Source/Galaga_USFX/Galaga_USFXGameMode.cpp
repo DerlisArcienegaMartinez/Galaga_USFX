@@ -7,6 +7,7 @@
 #include "NaveEnemigaTransporte.h"
 #include "NaveEnemigaEspia.h"
 #include "NaveEnemigaNodriza.h"
+#include "Transporte01.h"
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
@@ -28,7 +29,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 	FVector ubicacionNaveNodriza01 = FVector(-1000.0f, -7.00f, 250.0f);
 	FVector ubicacionNaveEspia02 = FVector(-1000.0f, -350.00f, 250.0f);
 	FVector ubicacionNaveNodriza02 = FVector(-1000.0f, 100.00f, 250.0f);
-
+	FVector ubicacionTransporte01 = FVector(-1000.0f, -550.00f, 250.0f);
 
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 
@@ -44,6 +45,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 		NaveEnemigaEspia02 = World->SpawnActor<ANaveEnemigaEspia>(ubicacionNaveEspia02, rotacionNave);
 		NaveEnemigaNodriza01 = World->SpawnActor<ANaveEnemigaNodriza>(ubicacionNaveNodriza01, rotacionNave);
 		NaveEnemigaNodriza02 = World->SpawnActor<ANaveEnemigaNodriza>(ubicacionNaveNodriza02, rotacionNave);
+		Transporte01 = World->SpawnActor<ATransporte01>(ubicacionTransporte01, rotacionNave);
 	}
 	NaveEnemigaCaza01->SetPosicion(FVector(-50.0f, 350.0f, 250.0f));
 	NaveEnemigaCaza02->SetPosicion(FVector(-80.0f, 350.0f, 250.0f));
@@ -53,6 +55,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 	NaveEnemigaNodriza01->SetPosicion(FVector(-1000.0f, -7.00f, 250.0f));
 	NaveEnemigaEspia02->SetPosicion(FVector(-1000.0f, -350.00f, 250.0f));
 	NaveEnemigaNodriza02->SetPosicion(FVector(-1000.0f, 100.00f, 250.0f));
+	Transporte01->SetPosicion(FVector(-1000.0f, -550.0f, 250.0f));
 
 	
 }

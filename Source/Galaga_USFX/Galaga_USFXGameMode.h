@@ -11,6 +11,7 @@ class ANaveEnemigaCaza;
 class ANaveEnemigaTransporte;
 class ANaveEnemigaEspia;
 class ANaveEnemigaNodriza;
+class ATransporte01;
 
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase
@@ -36,6 +37,8 @@ public:
 	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
 	ANaveEnemigaEspia* NaveEnemigaEspia02;
 	ANaveEnemigaNodriza* NaveEnemigaNodriza02;
+
+	ATransporte01* Transporte01;
 
 };
 

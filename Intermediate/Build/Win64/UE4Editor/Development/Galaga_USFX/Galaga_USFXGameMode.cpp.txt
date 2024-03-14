@@ -21,3 +21,5 @@ C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Source\Galaga_USFX\NaveEnem
 C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaEspia.generated.h
 C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaNodriza.h
 C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaNodriza.generated.h
+C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Source\Galaga_USFX\Transporte01.h
+C:\Users\LENOVO\OneDrive\Escritorio\dkam\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\Transporte01.generated.h
