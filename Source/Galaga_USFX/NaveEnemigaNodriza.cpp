@@ -10,7 +10,7 @@ void ANaveEnemigaNodriza::BeginPlay()
 
 ANaveEnemigaNodriza::ANaveEnemigaNodriza()
 {
-	VelocidadMovimiento = 50.0f; //Velocidad predeterminada
+	VelocidadMovimiento = 30.0f; //Velocidad predeterminada
 	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f ); //Determina la direccion donde va la nave eje x
 	
 
