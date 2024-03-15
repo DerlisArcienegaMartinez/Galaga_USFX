@@ -19,7 +19,7 @@ void ANaveEnemigaTransporte::Tick(float DeltaTime)
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Trim.Shape_Trim'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }
 

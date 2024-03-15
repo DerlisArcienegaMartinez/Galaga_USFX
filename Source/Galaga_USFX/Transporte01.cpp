@@ -12,10 +12,10 @@ void ATransporte01::BeginPlay()
 
 ATransporte01::ATransporte01()
 {
-	VelocidadMovimiento = 35.0f; //Velocidad predeterminada
+	VelocidadMovimiento = -30.0f; //Velocidad predeterminada
 	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Trim.Shape_Trim'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }
 

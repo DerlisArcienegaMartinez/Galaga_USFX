@@ -10,8 +10,8 @@ void ANaveEnemigaNodriza::BeginPlay()
 
 ANaveEnemigaNodriza::ANaveEnemigaNodriza()
 {
-	VelocidadMovimiento = 30.0f; //Velocidad predeterminada
-	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f ); //Determina la direccion donde va la nave eje x
+	/*VelocidadMovimiento = -30.0f; //Velocidad predeterminada
+	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f ); //Determina la direccion donde va la nave eje x*/
 	
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
@@ -28,13 +28,13 @@ void ANaveEnemigaNodriza::Tick(float DeltaTime)
 void ANaveEnemigaNodriza::Mover(float DeltaTime)
 {
 	//Obtener la posicion actual del actor
-	FVector posicionActual = GetActorLocation();
+	/*FVector posicionActual = GetActorLocation();
 
 	//Calcular el desplazamiento basado en la velocidad y tiempo transcurrido
 	FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
 	posicionActual += Desplazamiento;
 
-	SetActorLocation(posicionActual);
+	SetActorLocation(posicionActual);*/
 }
 
 void ANaveEnemigaNodriza::Destruirse(float DeltaTime)

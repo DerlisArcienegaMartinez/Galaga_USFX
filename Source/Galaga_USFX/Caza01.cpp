@@ -12,7 +12,7 @@ void ACaza01::BeginPlay()
 
 ACaza01::ACaza01()
 {
-	VelocidadMovimiento = 100.0f; //Velocidad predeterminada
+	VelocidadMovimiento = -30.0f; //Velocidad predeterminada
 	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
