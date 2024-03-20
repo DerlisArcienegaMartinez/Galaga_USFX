@@ -10,8 +10,8 @@ void ANodriza01::BeginPlay()
 
 	tiempo = 0.0f;
 	velocidad = -10.0f;
-	ancho = 10.0f;
-	MovementSpeed = -35.0f;
+	ancho = 20.0f;
+	MovementSpeed = -30.0f;
 
 }
 

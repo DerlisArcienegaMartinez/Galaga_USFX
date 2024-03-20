@@ -38,18 +38,15 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	ANaveEnemiga* NaveEnemiga01;
+  //ANaveEnemiga* NaveEnemiga01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
-	//ANaveEnemigaCaza* NaveEnemigaCaza02;
 
-	//ANaveEnemigaTransporte* NaveEnemigaTransporte01;
 	ANaveEnemigaTransporte* NaveEnemigaTransporte02;
 
 	ANaveEnemigaEspia* NaveEnemigaEspia01;
-	//ANaveEnemigaEspia* NaveEnemigaEspia02;
 
 	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
-	//ANaveEnemigaNodriza* NaveEnemigaNodriza02;
+	
 
 	ANaveEnemigaReabastecimiento* NaveEnemigaReabastecimiento01;
 
@@ -68,6 +65,17 @@ public:
 
 	AReabastecimiento01* Reabastecimiento001;
 	AReabastecimiento02* Reabastecimiento002;
+
+public:
+	TArray<ANaveEnemiga*> TANavesEnemigas; //Almaceno direcciones de memoria para encontrar naveenemiga
+	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
+	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+
+private:
+	int tiempoTranscurrido;
+
+public:
+	virtual void Tick(float DeltaTime) override;
 
 };
 

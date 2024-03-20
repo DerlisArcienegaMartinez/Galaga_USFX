@@ -3,12 +3,12 @@
 
 #include "NaveEnemigaCaza.h"
 
-// Called when the game starts or when spawned
+/*// Called when the game starts or when spawned
 void ANaveEnemigaCaza::BeginPlay()
 {
 	Super::BeginPlay();
 
-}
+}*/
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
@@ -27,7 +27,7 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
 	// Obtiene la posición actual del actor
-	/*FVector PosicionActual = GetActorLocation();
+	FVector PosicionActual = GetActorLocation();
 
 	// Genera nuevas coordenadas X e Y aleatorias
 	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
@@ -37,7 +37,7 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z);
 
 	// Establece la nueva posición del actor
-	SetActorLocation(NuevaPosicion);*/
+	SetActorLocation(NuevaPosicion);
 }
 
 void ANaveEnemigaCaza::Destruirse(float DeltaTime)

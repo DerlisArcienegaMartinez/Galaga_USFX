@@ -19,7 +19,6 @@ public:
 
 protected:
 	float velocidad;
-	float velocidadDisparo;
 	float resistencia;
 	float danoProducido;
 	float valorDestruccion;
@@ -28,11 +27,18 @@ protected:
 	FString nombre;
 	float tiempoDisparo;
 	FVector posicion;
-	//CATrayectoria* trayectoria;
+
+	int trayectoria;
+	int capacidadPasajeros;
+	int capacidadMunicion;
+	int tipoNave;
+
+	float peso;
+	float volumen;
+
 public:
 	// Metodos accesores
 	FORCEINLINE float GetVelocidad() const { return velocidad; }
-	FORCEINLINE float GetVelocidadDisparo() const { return velocidadDisparo; }
 	FORCEINLINE float GetResistencia() const { return resistencia; }
 	FORCEINLINE float GetDanoProducido() const { return danoProducido; }
 	FORCEINLINE float GetValorDestruccion() const { return valorDestruccion; }
@@ -41,9 +47,16 @@ public:
 	FORCEINLINE float GetEnergia() const { return energia; }
 	FORCEINLINE FString GetNombre() const { return nombre; }
 	FORCEINLINE FVector GetPosicion() const { return posicion; }
+	FORCEINLINE int GetTrayectoria() const { return trayectoria; }
+	FORCEINLINE int GetCapacidadPasajeros()const { return capacidadPasajeros; }
+	FORCEINLINE int GetCapacidadMunicion() { return capacidadMunicion; }
+	FORCEINLINE int GetTipoNave() const { return tipoNave; }
+	FORCEINLINE float GetPeso() const { return peso; }
+	FORCEINLINE float GetVolumen() const { return volumen; }
+
+
 
 	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
-	FORCEINLINE void SetVelocidadDisparo(float _velocidadDisparo) { velocidadDisparo = _velocidadDisparo; }
 	FORCEINLINE void SetResistencia(float _resistencia) { resistencia = _resistencia; }
 	FORCEINLINE void SetValorDestruccion(float _valorDestruccion) { valorDestruccion = _valorDestruccion; }
 	FORCEINLINE void SetDanoProducido(float _danoProducido) { danoProducido = _danoProducido; }
@@ -52,6 +65,13 @@ public:
 	FORCEINLINE void SetEnergia(float _energia) { energia = _energia; }
 	FORCEINLINE void SetNombre(FString _nombre) { nombre = _nombre; }
 	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion; }
+	FORCEINLINE void SetTrayectoria(int _trayectoria) { trayectoria = _trayectoria; }
+	FORCEINLINE void SetCapacidadPasajeros(int _capacidadPasajeros) { capacidadPasajeros = _capacidadPasajeros; }
+	FORCEINLINE void SetCapacidadMunicion(int _capacidadMunicion) { capacidadMunicion = _capacidadMunicion; }
+	FORCEINLINE void SetTipoNave(int _tipoNave) { tipoNave = _tipoNave; }
+	FORCEINLINE void SetPeso(float _peso) { peso = _peso; }
+	FORCEINLINE void SetVolumen(float _volumen) { volumen = _volumen; }
+
 	
 public:	
 	// Sets default values for this actor's properties

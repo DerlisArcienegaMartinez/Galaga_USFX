@@ -46,9 +46,9 @@ public:
 	FORCEINLINE void SetCombustible(float _combustible) { combustible = _combustible; }
 	FORCEINLINE void SetVelocidadEscape(float escape) { velocidadEscape = escape; }
 
-protected:
+/*protected:
 	//Se llama cuando el juego comienza o cuando se genera
-	virtual void BeginPlay() override;
+	virtual void BeginPlay() override;*/
 
 public:
 	ANaveEnemigaTransporte();
@@ -56,7 +56,7 @@ public:
 	//LLamar a cada fotograma
 	virtual void Tick(float DeltaTime) override;
 
-public:
+protected:
 	
 	virtual void Mover(float DeltaTime);
 	virtual void Destruirse(float DeltaTime);

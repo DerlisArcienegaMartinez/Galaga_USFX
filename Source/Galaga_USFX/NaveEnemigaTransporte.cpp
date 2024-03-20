@@ -3,12 +3,12 @@
 
 #include "NaveEnemigaTransporte.h"
 
-// Called when the game starts or when spawned
+/*// Called when the game starts or when spawned
 void ANaveEnemigaTransporte::BeginPlay()
 {
 	Super::BeginPlay();
 
-}
+}*/
 
 
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
@@ -25,8 +25,8 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-	// Obtiene la posición actual del actor
-	/*FVector PosicionActual = GetActorLocation();
+	/*// Obtiene la posición actual del actor
+	FVector PosicionActual = GetActorLocation();
 
 	// Genera nuevas coordenadas X e Y aleatorias
 	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * (DeltaTime / 1000.0f);
