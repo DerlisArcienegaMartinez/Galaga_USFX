@@ -35,7 +35,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 	Super::BeginPlay();
 	//Set the game state to playing
 
-	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, 0.0f, 150.0f);
+	FVector ubicacionInicialNavesEnemigas = FVector(0.0f, -500.0f, 250.0f);
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
 	
     FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
@@ -43,13 +43,13 @@ void AGalaga_USFXGameMode::BeginPlay()
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
-		
+
 		//NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave);
 		//NaveEnemigaCaza01 = World->SpawnActor<ANaveEnemigaCaza>(ubicacionNave02, rotacionNave);
 
 		for (int i = 0; i < 5; i++) {
 			ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActualNaveEnemiga, rotacionNave);
-		    NaveEnemigaCazaActual->SetNombre("nave enemiga caza " + FString::FromInt(i));
+			NaveEnemigaCazaActual->SetNombre("nave enemiga caza " + FString::FromInt(i));
 			TANavesEnemigas.Add(NaveEnemigaCazaActual);
 			TMPosicionesNavesEnemigas.Add(NaveEnemigaCazaActual, ubicacionActualNaveEnemiga);
 
@@ -68,36 +68,74 @@ void AGalaga_USFXGameMode::BeginPlay()
 			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
 		}
 
-		FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
+		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X - 100.0f;
+		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
+		for (int k = 0; k < 5; k++) {
 
-		GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas, 1.0f, true);
+			ANaveEnemigaEspia* NaveEnemigaEspiaActual = World->SpawnActor<ANaveEnemigaEspia>(ubicacionActualNaveEnemiga, rotacionNave);
+			NaveEnemigaEspiaActual->SetNombre("nave enemiga espia" + FString::FromInt(k));
+			TANavesEnemigas.Add(NaveEnemigaEspiaActual);
+			TMPosicionesNavesEnemigas.Add(NaveEnemigaEspiaActual, ubicacionActualNaveEnemiga);
 
-	}
-
-
-
-}
-
-void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()
-{
-
-	for (auto ElementoActual : TMPosicionesNavesEnemigas) {
-		ANaveEnemiga* naveEnemigaActual = ElementoActual.Key;
-		FVector posicionActualNaveEnemiga = ElementoActual.Value;
-		FString mensaje = "La nave " + naveEnemigaActual->GetNombre() + " esta en la posicion> " + posicionActualNaveEnemiga.ToString();
-
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, mensaje);
-
-			/*FString mensaje = "Nombre NaveEnemiga: " + Clave->GetNombre() + " Posicion NaveEnemiga: " + Valor.ToString();
-			GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, mensaje);*/
-
+			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
 		}
 
-		TMPosicionesNavesEnemigas[naveEnemigaActual] = naveEnemigaActual->GetActorLocation();
+		
+		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X - 250.0f;
+		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
+		for (int l = 0; l < 5; l++) {
+
+			ANaveEnemigaNodriza* NaveEnemigaNodrizaActual = World->SpawnActor<ANaveEnemigaNodriza>(ubicacionActualNaveEnemiga, rotacionNave);
+			NaveEnemigaNodrizaActual->SetNombre("nave enemiga nodriza" + FString::FromInt(l));
+			TANavesEnemigas.Add(NaveEnemigaNodrizaActual);
+			TMPosicionesNavesEnemigas.Add(NaveEnemigaNodrizaActual, ubicacionActualNaveEnemiga);
+
+			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
+		}
+
+		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X + 150.0f;
+		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
+		for (int m = 0; m < 5; m++) {
+
+			ANaveEnemigaReabastecimiento* NaveEnemigaReabastecimientoActual = World->SpawnActor<ANaveEnemigaReabastecimiento>(ubicacionActualNaveEnemiga, rotacionNave);
+			NaveEnemigaReabastecimientoActual->SetNombre("nave enemiga reabastecimiento" + FString::FromInt(m));
+			TANavesEnemigas.Add(NaveEnemigaReabastecimientoActual);
+			TMPosicionesNavesEnemigas.Add(NaveEnemigaReabastecimientoActual, ubicacionActualNaveEnemiga);
+
+			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
+		}
+
+
+		/*FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
+
+		GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas, 1.0f, true);*/
+
 	}
 
+
+
 }
+
+//void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()
+//{
+//
+//	for (auto ElementoActual : TMPosicionesNavesEnemigas) {
+//		ANaveEnemiga* naveEnemigaActual = ElementoActual.Key;
+//		FVector posicionActualNaveEnemiga = ElementoActual.Value;
+//		FString mensaje = "La nave " + naveEnemigaActual->GetNombre() + " esta en la posicion> " + posicionActualNaveEnemiga.ToString();
+//
+//		if (GEngine)
+//		{
+//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, mensaje);
+//
+//			/*FString mensaje = "Nombre NaveEnemiga: " + Clave->GetNombre() + " Posicion NaveEnemiga: " + Valor.ToString();
+//			GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, mensaje);*/
+//
+//		}
+//
+//		TMPosicionesNavesEnemigas[naveEnemigaActual] = naveEnemigaActual->GetActorLocation();
+//	}
+//
+//}
 
 

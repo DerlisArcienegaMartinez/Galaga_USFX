@@ -67,11 +67,14 @@ public:
 	TArray<ANaveEnemiga*> TANavesEnemigas; //Almaceno direcciones de memoria para encontrar naveenemiga
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+	TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;
+	TArray<ANaveEnemigaNodriza*> TANavesEnemigasNodriza;
+	TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;
 
 	UPROPERTY()
 	TMap<ANaveEnemiga*, FVector> TMPosicionesNavesEnemigas;
 
-	void MostrarPosicionesNavesEnemigas();
+	//void MostrarPosicionesNavesEnemigas();
 };
 
 

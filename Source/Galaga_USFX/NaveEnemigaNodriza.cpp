@@ -27,14 +27,18 @@ void ANaveEnemigaNodriza::Tick(float DeltaTime)
 
 void ANaveEnemigaNodriza::Mover(float DeltaTime)
 {
-	//Obtener la posicion actual del actor
-	/*FVector posicionActual = GetActorLocation();
+	// Obtiene la posición actual del actor
+	FVector PosicionActual = GetActorLocation();
 
-	//Calcular el desplazamiento basado en la velocidad y tiempo transcurrido
-	FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
-	posicionActual += Desplazamiento;
+	// Genera nuevas coordenadas X e Y aleatorias
+	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
+	float NuevaY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
 
-	SetActorLocation(posicionActual);*/
+	// Crea un nuevo vector de posición con las coordenadas aleatorias y la misma Z que la posición actual
+	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z);
+
+	// Establece la nueva posición del actor
+	SetActorLocation(NuevaPosicion);
 }
 
 void ANaveEnemigaNodriza::Destruirse(float DeltaTime)
