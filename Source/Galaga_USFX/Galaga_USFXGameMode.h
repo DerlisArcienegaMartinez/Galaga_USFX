@@ -38,13 +38,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-  //ANaveEnemiga* NaveEnemiga01;
+    ANaveEnemiga* NaveEnemiga01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
-
 	ANaveEnemigaTransporte* NaveEnemigaTransporte02;
-
 	ANaveEnemigaEspia* NaveEnemigaEspia01;
-
 	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
 	
 
@@ -71,12 +68,10 @@ public:
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
 	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 
-private:
-	int tiempoTranscurrido;
+	UPROPERTY()
+	TMap<ANaveEnemiga*, FVector> TMPosicionesNavesEnemigas;
 
-public:
-	virtual void Tick(float DeltaTime) override;
-
+	void MostrarPosicionesNavesEnemigas();
 };
 
 

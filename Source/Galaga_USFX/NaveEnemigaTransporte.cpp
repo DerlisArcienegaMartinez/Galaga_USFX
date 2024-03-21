@@ -3,14 +3,6 @@
 
 #include "NaveEnemigaTransporte.h"
 
-/*// Called when the game starts or when spawned
-void ANaveEnemigaTransporte::BeginPlay()
-{
-	Super::BeginPlay();
-
-}*/
-
-
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -21,11 +13,14 @@ ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
+
+	dimensionCargaOcupada = 300.0f;
+	dimensionCargaDisponible = 700.0f;
 }
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-	/*// Obtiene la posición actual del actor
+	// Obtiene la posición actual del actor
 	FVector PosicionActual = GetActorLocation();
 
 	// Genera nuevas coordenadas X e Y aleatorias
@@ -37,7 +32,12 @@ void ANaveEnemigaTransporte::Mover(float DeltaTime)
 	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z + NuevaZ);
 
 	// Establece la nueva posición del actor
-	SetActorLocation(NuevaPosicion);*/
+	SetActorLocation(NuevaPosicion);
+}
+
+void ANaveEnemigaTransporte::Cargar(float dimensionCarga, float pesoCarga)
+{
+	dimensionCargaOcupada = dimensionCargaDisponible - dimensionCarga;
 }
 
 void ANaveEnemigaTransporte::Destruirse(float DeltaTime)

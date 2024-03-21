@@ -46,9 +46,9 @@ public:
 	FORCEINLINE void SetCombustible(float _combustible) { combustible = _combustible; }
 	FORCEINLINE void SetVelocidadEscape(float escape) { velocidadEscape = escape; }
 
-/*protected:
-	//Se llama cuando el juego comienza o cuando se genera
-	virtual void BeginPlay() override;*/
+public: 
+	float dimensionCargaOcupada;
+	float dimensionCargaDisponible;
 
 public:
 	ANaveEnemigaTransporte();
@@ -59,6 +59,7 @@ public:
 protected:
 	
 	virtual void Mover(float DeltaTime);
+	virtual void Cargar(float dimesionCarga, float pesoCarga);
 	virtual void Destruirse(float DeltaTime);
 	virtual void Escapar(float DeltaTIme);
 	virtual void Atacar(float DeltaTime);
