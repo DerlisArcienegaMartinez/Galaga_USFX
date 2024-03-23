@@ -4,28 +4,17 @@
 #include "Galaga_USFXPawn.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.h"
+
 //#include "NaveEnemigaTransporte.h"
-//#include "NaveEnemigaEspia.h"
-//#include "NaveEnemigaNodriza.h"
-//#include "NaveEnemigaReabastecimiento.h"
-//
-//#include "Caza01.h"
-//#include "Caza02.h"
-//#include "Transporte01.h"
-//#include "Transporte02.h"
-//#include "Espia01.h"
-//#include "Espia02.h"
-//#include "Nodriza01.h"
-//#include "Nodriza02.h"
-//#include "Reabastecimiento01.h"
-//#include "Reabastecimiento02.h"
 
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
 	// set default pawn class to our character class
 	PrimaryActorTick.bCanEverTick = true;
-	DefaultPawnClass = AGalaga_USFXPawn::StaticClass();
+	
+
+	
 	
 	//NaveEnemiga01 = nullptr;
 
@@ -75,6 +64,8 @@ void AGalaga_USFXGameMode::BeginPlay()
 
 		FTimerHandle FTHSpawnNaves;
 		GetWorld()->GetTimerManager().SetTimer(FTHSpawnNaves, this, &AGalaga_USFXGameMode::spawnNavesCazas, 5.0f, true);
+
+		
 	}
 
 
@@ -91,7 +82,6 @@ void AGalaga_USFXGameMode::spawnNavesCazas()
 		GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass(), SpawnNavesCazasLocation, SpawnNavesCazasRotation, SpawnParams);
 
 }
-
 
 
 //void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()

@@ -31,6 +31,10 @@ AGalaga_USFXProjectile::AGalaga_USFXProjectile()
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
+
+	PrimaryActorTick.bCanEverTick = false;
+	SetReplicates(true);
+	SetReplicateMovement(true);
 }
 
 void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -42,4 +46,5 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 	}
 
 	Destroy();
+
 }

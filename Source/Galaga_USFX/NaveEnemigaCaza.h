@@ -18,7 +18,7 @@ private:
 	int cantidadBombas;
 	float tamanioNave;
 	int energiaNave;
-	
+
 	int cantidadMuniciones;
 	float velocidadNave;
 
@@ -58,14 +58,6 @@ public:
 		float LimiteInferior;
 	UPROPERTY()
 		float LimiteSuperior;
-	/*UPROPERTY()
-		float VelocidadZigzag;
-	UPROPERTY()
-		float AmplitudZigzag;*/
-
-//private:
-//		FVector UbicacionInicial;
-//		float TiempoTranscurrido;
 
 protected:
 	virtual void Mover(float DeltaTime);

@@ -49,12 +49,12 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXGameMode_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "//class ANaveEnemigaTransporte;\n//class ANaveEnemigaEspia;\n//class ANaveEnemigaNodriza;\n//class ANaveEnemigaReabastecimiento;\n//\n//class ACaza01;\n//class ACaza02;\n//class ATransporte01;\n//class ATransporte02;\n//class AEspia01;\n//class AEspia02;\n//class ANodriza01;\n//class ANodriza02;\n//class AReabastecimiento01;\n//class AReabastecimiento02;\n" },
+		{ "Comment", "//class ANaveEnemigaTransporte;\n" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Galaga_USFXGameMode.h" },
 		{ "ModuleRelativePath", "Galaga_USFXGameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
-		{ "ToolTip", "class ANaveEnemigaTransporte;\nclass ANaveEnemigaEspia;\nclass ANaveEnemigaNodriza;\nclass ANaveEnemigaReabastecimiento;\n\nclass ACaza01;\nclass ACaza02;\nclass ATransporte01;\nclass ATransporte02;\nclass AEspia01;\nclass AEspia02;\nclass ANodriza01;\nclass ANodriza02;\nclass AReabastecimiento01;\nclass AReabastecimiento02;" },
+		{ "ToolTip", "class ANaveEnemigaTransporte;" },
 	};
 #endif
 #if WITH_METADATA
@@ -99,7 +99,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 1337726657);
+	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 234847407);
 	template<> GALAGA_USFX_API UClass* StaticClass<AGalaga_USFXGameMode>()
 	{
 		return AGalaga_USFXGameMode::StaticClass();

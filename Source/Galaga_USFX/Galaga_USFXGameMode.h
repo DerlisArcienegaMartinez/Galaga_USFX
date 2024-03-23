@@ -9,20 +9,7 @@
 class ANaveEnemiga;
 class ANaveEnemigaCaza;
 //class ANaveEnemigaTransporte;
-//class ANaveEnemigaEspia;
-//class ANaveEnemigaNodriza;
-//class ANaveEnemigaReabastecimiento;
-//
-//class ACaza01;
-//class ACaza02;
-//class ATransporte01;
-//class ATransporte02;
-//class AEspia01;
-//class AEspia02;
-//class ANodriza01;
-//class ANodriza02;
-//class AReabastecimiento01;
-//class AReabastecimiento02;
+
 
 
 UCLASS(MinimalAPI)
@@ -36,6 +23,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+
 
 public:
     ANaveEnemiga* NaveEnemiga01;
@@ -76,6 +65,7 @@ public:
 
 	//void MostrarPosicionesNavesEnemigas();
 	void spawnNavesCazas();
+	//void OnProjectileHit(AActor* Projectile, AActor* OtherActor);
 };
 
 

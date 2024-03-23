@@ -9,6 +9,8 @@
 class UProjectileMovementComponent;
 class UStaticMeshComponent;
 
+
+
 UCLASS(config=Game)
 class AGalaga_USFXProjectile : public AActor
 {
@@ -22,8 +24,12 @@ class AGalaga_USFXProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
+	
+
 public:
 	AGalaga_USFXProjectile();
+
+
 
 	/** Function to handle the projectile hitting something */
 	UFUNCTION()
@@ -33,5 +39,10 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetProjectileMesh() const { return ProjectileMesh; }
 	/** Returns ProjectileMovement subobject **/
 	FORCEINLINE UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+
+	
+	
+	
 };
+
 
