@@ -22,7 +22,7 @@ ACaza01::ACaza01()
 void ACaza01::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+	//Mover(DeltaTime);
 }
 
 void ACaza01::Mover(float DeltaTime)

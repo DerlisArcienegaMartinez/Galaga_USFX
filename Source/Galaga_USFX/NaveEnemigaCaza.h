@@ -37,7 +37,7 @@ public:
 	FORCEINLINE void SetCantidadMuniciones(int _cantidadMuniciones) { cantidadMuniciones = _cantidadMuniciones; }
 	FORCEINLINE void SetVelocidadNave(float _velocidadaNave) { velocidadNave = _velocidadaNave; }
 
-/protected:
+protected:
 	//Se llama cuando el juego comienza o cuando se genera
 	virtual void BeginPlay() override;
 
@@ -58,6 +58,14 @@ public:
 		float LimiteInferior;
 	UPROPERTY()
 		float LimiteSuperior;
+	/*UPROPERTY()
+		float VelocidadZigzag;
+	UPROPERTY()
+		float AmplitudZigzag;*/
+
+//private:
+//		FVector UbicacionInicial;
+//		float TiempoTranscurrido;
 
 protected:
 	virtual void Mover(float DeltaTime);

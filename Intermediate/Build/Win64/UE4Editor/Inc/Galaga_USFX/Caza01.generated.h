@@ -58,11 +58,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ACaza01); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACaza01)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__VelocidadMovimiento() { return STRUCT_OFFSET(ACaza01, VelocidadMovimiento); } \
-	FORCEINLINE static uint32 __PPO__DireccionMovimiento() { return STRUCT_OFFSET(ACaza01, DireccionMovimiento); }
-
-
+#define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_PRIVATE_PROPERTY_OFFSET
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_12_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_Caza01_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

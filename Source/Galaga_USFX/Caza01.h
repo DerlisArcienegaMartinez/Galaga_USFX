@@ -13,7 +13,7 @@ UCLASS()
 class GALAGA_USFX_API ACaza01 : public ANaveEnemigaCaza
 {
 	GENERATED_BODY()
-	
+
 protected:
 	//Se llama cuando el juego comienza o cuando se genera
 	virtual void BeginPlay() override;

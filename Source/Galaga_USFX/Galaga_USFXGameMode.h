@@ -8,21 +8,21 @@
 
 class ANaveEnemiga;
 class ANaveEnemigaCaza;
-class ANaveEnemigaTransporte;
-class ANaveEnemigaEspia;
-class ANaveEnemigaNodriza;
-class ANaveEnemigaReabastecimiento;
-
-class ACaza01;
-class ACaza02;
-class ATransporte01;
-class ATransporte02;
-class AEspia01;
-class AEspia02;
-class ANodriza01;
-class ANodriza02;
-class AReabastecimiento01;
-class AReabastecimiento02;
+//class ANaveEnemigaTransporte;
+//class ANaveEnemigaEspia;
+//class ANaveEnemigaNodriza;
+//class ANaveEnemigaReabastecimiento;
+//
+//class ACaza01;
+//class ACaza02;
+//class ATransporte01;
+//class ATransporte02;
+//class AEspia01;
+//class AEspia02;
+//class ANodriza01;
+//class ANodriza02;
+//class AReabastecimiento01;
+//class AReabastecimiento02;
 
 
 UCLASS(MinimalAPI)
@@ -40,7 +40,7 @@ protected:
 public:
     ANaveEnemiga* NaveEnemiga01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
-	ANaveEnemigaTransporte* NaveEnemigaTransporte02;
+	/*ANaveEnemigaTransporte* NaveEnemigaTransporte02;
 	ANaveEnemigaEspia* NaveEnemigaEspia01;
 	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
 	
@@ -61,15 +61,15 @@ public:
 	ANodriza02* Nodriza002;
 
 	AReabastecimiento01* Reabastecimiento001;
-	AReabastecimiento02* Reabastecimiento002;
+	AReabastecimiento02* Reabastecimiento002;*/
 
 public:
 	TArray<ANaveEnemiga*> TANavesEnemigas; //Almaceno direcciones de memoria para encontrar naveenemiga
 	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
-	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+	/*TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
 	TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;
 	TArray<ANaveEnemigaNodriza*> TANavesEnemigasNodriza;
-	TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;
+	TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;*/
 
 	UPROPERTY()
 	TMap<ANaveEnemiga*, FVector> TMPosicionesNavesEnemigas;

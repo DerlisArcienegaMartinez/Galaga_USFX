@@ -17,16 +17,16 @@ ACaza02::ACaza02()
 //
 //	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 //	mallaNaveEnemiga->SetStaticMesh(malla.Object);
-//}
-//
-//void ACaza02::Tick(float DeltaTime)
-//{
-//	Super::Tick(DeltaTime);
-//	Mover(DeltaTime);
-//}
-//
-//void ACaza02::Mover(float DeltaTime)
-//{
+}
+
+void ACaza02::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	//Mover(DeltaTime);
+}
+
+void ACaza02::Mover(float DeltaTime)
+{
 //	//Obtener la posicion actual del actor
 //	FVector posicionActual = GetActorLocation();
 //
@@ -35,4 +35,4 @@ ACaza02::ACaza02()
 //	posicionActual += Desplazamiento;
 //
 //	SetActorLocation(posicionActual);
-//}
+}
