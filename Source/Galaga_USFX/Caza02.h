@@ -18,10 +18,10 @@ protected:
 	//Se llama cuando el juego comienza o cuando se genera
 	virtual void BeginPlay() override;
 
-	UPROPERTY()
-		float VelocidadMovimiento;
-	UPROPERTY()
-		FVector DireccionMovimiento;
+	//UPROPERTY()
+	//	float VelocidadMovimiento;
+	//UPROPERTY()
+	//	FVector DireccionMovimiento;
 
 public:
 	ACaza02();

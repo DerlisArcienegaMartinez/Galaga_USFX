@@ -75,7 +75,7 @@ public:
 	TMap<ANaveEnemiga*, FVector> TMPosicionesNavesEnemigas;
 
 	//void MostrarPosicionesNavesEnemigas();
+	void spawnNavesCazas();
 };
-
 
 

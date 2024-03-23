@@ -68,53 +68,32 @@ void AGalaga_USFXGameMode::BeginPlay()
 			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
 		}
 
-		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X - 100.0f;
-		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
-		for (int k = 0; k < 5; k++) {
-
-			ANaveEnemigaEspia* NaveEnemigaEspiaActual = World->SpawnActor<ANaveEnemigaEspia>(ubicacionActualNaveEnemiga, rotacionNave);
-			NaveEnemigaEspiaActual->SetNombre("nave enemiga espia" + FString::FromInt(k));
-			TANavesEnemigas.Add(NaveEnemigaEspiaActual);
-			TMPosicionesNavesEnemigas.Add(NaveEnemigaEspiaActual, ubicacionActualNaveEnemiga);
-
-			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
-		}
-
-		
-		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X - 250.0f;
-		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
-		for (int l = 0; l < 5; l++) {
-
-			ANaveEnemigaNodriza* NaveEnemigaNodrizaActual = World->SpawnActor<ANaveEnemigaNodriza>(ubicacionActualNaveEnemiga, rotacionNave);
-			NaveEnemigaNodrizaActual->SetNombre("nave enemiga nodriza" + FString::FromInt(l));
-			TANavesEnemigas.Add(NaveEnemigaNodrizaActual);
-			TMPosicionesNavesEnemigas.Add(NaveEnemigaNodrizaActual, ubicacionActualNaveEnemiga);
-
-			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
-		}
-
-		ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X + 150.0f;
-		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
-		for (int m = 0; m < 5; m++) {
-
-			ANaveEnemigaReabastecimiento* NaveEnemigaReabastecimientoActual = World->SpawnActor<ANaveEnemigaReabastecimiento>(ubicacionActualNaveEnemiga, rotacionNave);
-			NaveEnemigaReabastecimientoActual->SetNombre("nave enemiga reabastecimiento" + FString::FromInt(m));
-			TANavesEnemigas.Add(NaveEnemigaReabastecimientoActual);
-			TMPosicionesNavesEnemigas.Add(NaveEnemigaReabastecimientoActual, ubicacionActualNaveEnemiga);
-
-			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
-		}
 
 
 		/*FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
-
 		GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas, 1.0f, true);*/
 
+		FTimerHandle FTHSpawnNaves;
+		GetWorld()->GetTimerManager().SetTimer(FTHSpawnNaves, this, &AGalaga_USFXGameMode::spawnNavesCazas, 5.0f, false);
 	}
 
 
 
 }
+
+void AGalaga_USFXGameMode::spawnNavesCazas()
+{
+
+	for (int i = 0; i < 5; i++)
+	{
+		FVector SpawnNavesCazasLocation = FVector(0.0f, 0.0f, 214.72f); // Set your desired spawn location
+		FRotator SpawnNavesCazasRotation = FRotator(0.0f, 0.0f, 0.0f); // Set your desired spawn rotation
+		FActorSpawnParameters SpawnParams;
+		GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass(), SpawnNavesCazasLocation, SpawnNavesCazasRotation, SpawnParams);
+	}
+}
+
+
 
 //void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()
 //{

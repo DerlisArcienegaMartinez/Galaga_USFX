@@ -37,14 +37,27 @@ public:
 	FORCEINLINE void SetCantidadMuniciones(int _cantidadMuniciones) { cantidadMuniciones = _cantidadMuniciones; }
 	FORCEINLINE void SetVelocidadNave(float _velocidadaNave) { velocidadNave = _velocidadaNave; }
 
-/*protected:
+/protected:
 	//Se llama cuando el juego comienza o cuando se genera
-	virtual void BeginPlay() override;*/
+	virtual void BeginPlay() override;
 
 public:
 	ANaveEnemigaCaza();
 	//llamar a cada fotograma
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY()
+		float VelocidadMovimiento;
+	UPROPERTY()
+		FVector DireccionMovimiento;
+	UPROPERTY()
+		float LimiteIzquierdo;
+	UPROPERTY()
+		float LimiteDerecho;
+	UPROPERTY()
+		float LimiteInferior;
+	UPROPERTY()
+		float LimiteSuperior;
 
 protected:
 	virtual void Mover(float DeltaTime);

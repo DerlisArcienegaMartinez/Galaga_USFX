@@ -12,8 +12,8 @@ void ACaza01::BeginPlay()
 
 ACaza01::ACaza01()
 {
-	VelocidadMovimiento = -30.0f; //Velocidad predeterminada
-	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
+	//VelocidadMovimiento = -30.0f; //Velocidad predeterminada
+	//DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
@@ -27,12 +27,12 @@ void ACaza01::Tick(float DeltaTime)
 
 void ACaza01::Mover(float DeltaTime)
 {
-	//Obtener la posicion actual del actor
-	FVector posicionActual = GetActorLocation();
+	////Obtener la posicion actual del actor
+	//FVector posicionActual = GetActorLocation();
 
-	//Calcular el desplazamiento basado en la velocidad y tiempo transcurrido
-	FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
-	posicionActual += Desplazamiento;
+	////Calcular el desplazamiento basado en la velocidad y tiempo transcurrido
+	//FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
+	//posicionActual += Desplazamiento;
 
-	SetActorLocation(posicionActual);
+	//SetActorLocation(posicionActual);
 }
