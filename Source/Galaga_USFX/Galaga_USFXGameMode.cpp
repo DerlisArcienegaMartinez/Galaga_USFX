@@ -24,7 +24,7 @@ void AGalaga_USFXGameMode::BeginPlay()
 	Super::BeginPlay();
 	//Set the game state to playing
 
-	FVector ubicacionInicialNavesEnemigas = FVector(600.0f, 200.0f, 214.72f);
+	FVector ubicacionInicialNavesEnemigas = FVector(600.0f, -500.0f, 214.72f);
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
 	
     FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
@@ -75,13 +75,14 @@ void AGalaga_USFXGameMode::BeginPlay()
 void AGalaga_USFXGameMode::spawnNavesCazas()
 {
 
-
 		FVector SpawnNavesCazasLocation = FVector(600.0f, 200.0f, 214.72f); // Set your desired spawn location
 		FRotator SpawnNavesCazasRotation = FRotator(0.0f, 0.0f, 0.0f); // Set your desired spawn rotation
 		FActorSpawnParameters SpawnParams;
 		GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass(), SpawnNavesCazasLocation, SpawnNavesCazasRotation, SpawnParams);
 
+	
 }
+
 
 
 //void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()

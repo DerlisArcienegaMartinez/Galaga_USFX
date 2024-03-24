@@ -58,15 +58,22 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 		ANaveEnemigaCaza* NaveEnemigaCaza = Cast<ANaveEnemigaCaza>(OtherActor);
 		if (NaveEnemigaCaza)
 		{
+
+			// Reducir la energía de la nave enemiga
+			float const Cantidad = 25.0f; // Cantidad de daño que inflige la bala
+			NaveEnemigaCaza->RecibirDanio(Cantidad);
+
 			// Eliminar la bala
 			if (GetOwner() != NULL)
 			{
 				GetOwner()->Destroy();
 			}
 
-			// Eliminar la nave enemiga
-			NaveEnemigaCaza->Destroy();
+			//// Eliminar la nave enemiga
+			//NaveEnemigaCaza->Destroy();
 		}
 	}
+
+	
 
 }

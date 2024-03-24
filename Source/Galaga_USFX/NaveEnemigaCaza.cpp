@@ -14,10 +14,10 @@ void ANaveEnemigaCaza::BeginPlay()
 	VelocidadMovimiento = 1000.0f; //Velocidad predeterminada
 	DireccionMovimiento = FVector(FMath::RandRange(-1000.0f, 1000.0f), FMath::RandRange(-1000.0f, 1000.0f), 0.f).GetSafeNormal(); // Dirección inicial aleatoria  //FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 
-	LimiteDerecho = 1600.0f;
-	LimiteInferior = -1600.0f;
-	LimiteIzquierdo = -1600.0f;
-	LimiteSuperior = 1600.0f;
+	LimiteDerecho = 1000.0f;
+	LimiteInferior = -1200.0f;
+	LimiteIzquierdo = 0.0f;
+	LimiteSuperior = 1000.0f;
 
 
 
@@ -28,9 +28,10 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
-	
+	Energia = 10; // Inicializar la energia que tendra la nave
 
 }
+
 
 // Called every frame
 void ANaveEnemigaCaza::Tick(float DeltaTime)
@@ -45,7 +46,6 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
-	
 
 // Obtener la posición actual del actor
 	FVector PosicionActual = GetActorLocation();
@@ -72,10 +72,22 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 
 }
 
-
-
 void ANaveEnemigaCaza::Destruirse(float DeltaTime)
 {
+}
+
+
+
+void ANaveEnemigaCaza::RecibirDanio(float Cantidad)
+{
+	Energia -= Cantidad; // Reducir la energía según la cantidad de daño recibido
+
+	// Verificar si la energía llega a cero o menos
+	if (Energia <= 0)
+	{
+		// La nave ha sido destruida
+		Destroy();
+	}
 }
 
 void ANaveEnemigaCaza::Escapar(float DeltaTIme)

@@ -27,6 +27,9 @@ void ACaza01::Tick(float DeltaTime)
 
 void ACaza01::Mover(float DeltaTime)
 {
+
+	//VelocidadMovimiento = -30.0f; //Velocidad predeterminada
+	//DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 	////Obtener la posicion actual del actor
 	//FVector posicionActual = GetActorLocation();
 

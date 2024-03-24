@@ -20,6 +20,8 @@ class AGalaga_USFXGameMode : public AGameModeBase
 public:
 	AGalaga_USFXGameMode();
 
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -65,7 +67,7 @@ public:
 
 	//void MostrarPosicionesNavesEnemigas();
 	void spawnNavesCazas();
-	//void OnProjectileHit(AActor* Projectile, AActor* OtherActor);
+	
 };
 
 

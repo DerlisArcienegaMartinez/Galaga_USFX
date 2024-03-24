@@ -30,10 +30,15 @@ void ANodriza01::Tick(float DeltaTime)
 
 void ANodriza01::Mover(float DeltaTime)
 {
+	/*tiempo = 0.0f;
+	velocidad = -10.0f;
+	ancho = 20.0f;
+	MovementSpeed = -30.0f;
+
 	FVector NewLocation = GetActorLocation();
 	float DeltaHeight =  FMath::Sin(tiempo);
 	NewLocation.Y += DeltaHeight * ancho;
 	NewLocation.X += DeltaTime * MovementSpeed;
 	tiempo += DeltaTime * velocidad;
-	SetActorLocation(NewLocation);
+	SetActorLocation(NewLocation);*/
 }

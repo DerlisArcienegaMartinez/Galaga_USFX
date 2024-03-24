@@ -17,23 +17,26 @@ class GALAGA_USFX_API ANaveEnemigaCaza : public ANaveEnemiga
 private:
 	int cantidadBombas;
 	float tamanioNave;
-	int energiaNave;
+	int Energia;
 
 	int cantidadMuniciones;
 	float velocidadNave;
+
+	
+
 
 
 public:
 
 	FORCEINLINE int GetCantidadBombas()const { return cantidadBombas; }
 	FORCEINLINE float GetTamanioNave()const { return tamanioNave; }
-	FORCEINLINE int GetEnergiaNave()const { return energiaNave; }
+	FORCEINLINE int GetEnergia()const { return Energia; }
 	FORCEINLINE int GetCantidadMuniciones()const { return cantidadMuniciones; }
 	FORCEINLINE float GetVelocidadNave()const { return velocidadNave; }
 
 	FORCEINLINE void SetCantidadBombas(int _cantidadBombas) { cantidadBombas = _cantidadBombas; }
 	FORCEINLINE void SetTamanioNave(float _tamanioNave) { tamanioNave = _tamanioNave; }
-	FORCEINLINE void SetEnergiaNave(int _energiaNave) { energiaNave = _energiaNave; }
+	FORCEINLINE void SetEnergia(int _energia) { Energia = _energia; }
 	FORCEINLINE void SetCantidadMuniciones(int _cantidadMuniciones) { cantidadMuniciones = _cantidadMuniciones; }
 	FORCEINLINE void SetVelocidadNave(float _velocidadaNave) { velocidadNave = _velocidadaNave; }
 
@@ -43,6 +46,8 @@ protected:
 
 public:
 	ANaveEnemigaCaza();
+
+
 	//llamar a cada fotograma
 	virtual void Tick(float DeltaTime) override;
 
@@ -58,6 +63,9 @@ public:
 		float LimiteInferior;
 	UPROPERTY()
 		float LimiteSuperior;
+
+	// Función para recibir daño
+	void RecibirDanio(float Cantidad);
 
 protected:
 	virtual void Mover(float DeltaTime);
