@@ -5,3 +5,7 @@ C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFra
 C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
 C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:\Users\LENOVO\Desktop\dkam\Galaga_USFX\Source\Galaga_USFX\NaveEnemigaCaza.h
+C:\Users\LENOVO\Desktop\dkam\Galaga_USFX\Source\Galaga_USFX\NaveEnemiga.h
+C:\Users\LENOVO\Desktop\dkam\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemiga.generated.h
+C:\Users\LENOVO\Desktop\dkam\Galaga_USFX\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX\NaveEnemigaCaza.generated.h

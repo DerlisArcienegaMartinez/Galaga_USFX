@@ -6,6 +6,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Engine/StaticMesh.h"
+#include "NaveEnemigaCaza.h"
 
 AGalaga_USFXProjectile::AGalaga_USFXProjectile() 
 {
@@ -43,8 +44,29 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 20.0f, GetActorLocation());
+
+
+
 	}
 
 	Destroy();
+
+	//Si la bala impacta a la NaveEnemigaCaza lo elimina
+
+	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL))
+	{
+		ANaveEnemigaCaza* NaveEnemigaCaza = Cast<ANaveEnemigaCaza>(OtherActor);
+		if (NaveEnemigaCaza)
+		{
+			// Eliminar la bala
+			if (GetOwner() != NULL)
+			{
+				GetOwner()->Destroy();
+			}
+
+			// Eliminar la nave enemiga
+			NaveEnemigaCaza->Destroy();
+		}
+	}
 
 }
