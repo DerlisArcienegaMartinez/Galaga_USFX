@@ -10,8 +10,6 @@ class ANaveEnemiga;
 class ANaveEnemigaCaza;
 //class ANaveEnemigaTransporte;
 
-
-
 UCLASS(MinimalAPI)
 class AGalaga_USFXGameMode : public AGameModeBase
 {
@@ -20,39 +18,15 @@ class AGalaga_USFXGameMode : public AGameModeBase
 public:
 	AGalaga_USFXGameMode();
 
-
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-
-
 public:
     ANaveEnemiga* NaveEnemiga01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
-	/*ANaveEnemigaTransporte* NaveEnemigaTransporte02;
-	ANaveEnemigaEspia* NaveEnemigaEspia01;
-	ANaveEnemigaNodriza* NaveEnemigaNodriza01;
-	
+	//ANaveEnemigaTransporte* NaveEnemigaTransporte02;
 
-	ANaveEnemigaReabastecimiento* NaveEnemigaReabastecimiento01;
-
-	ACaza01* Caza001;
-	ACaza02* Caza002;
-
-
-	ATransporte01* Transporte001;
-	ATransporte02* Transporte002;
-
-	AEspia01* Espia001;
-	AEspia02* Espia002;
-
-	ANodriza01* Nodriza001;
-	ANodriza02* Nodriza002;
-
-	AReabastecimiento01* Reabastecimiento001;
-	AReabastecimiento02* Reabastecimiento002;*/
 
 public:
 	TArray<ANaveEnemiga*> TANavesEnemigas; //Almaceno direcciones de memoria para encontrar naveenemiga
@@ -61,13 +35,12 @@ public:
 	TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;
 	TArray<ANaveEnemigaNodriza*> TANavesEnemigasNodriza;
 	TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;*/
-
 	UPROPERTY()
 	TMap<ANaveEnemiga*, FVector> TMPosicionesNavesEnemigas;
 
-	//void MostrarPosicionesNavesEnemigas();
+public:
 	void spawnNavesCazas();
-	
+	//void MostrarPosicionesNavesEnemigas();
 };
 
 

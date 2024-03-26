@@ -24,9 +24,6 @@ private:
 	float combustible;//cuanto de combustible tiene la nave
 	float velocidadEscape;//evitar ataques
 
-
-
-
 public:
 	FORCEINLINE float GetCapacidadCargaPeso()const { return capacidadCargaPeso; }
 	FORCEINLINE float GetCapacidadCargaVolumen()const { return capacidadCargaVolumen; }
@@ -67,5 +64,4 @@ protected:
 	virtual void MantenimientoNaves(bool DeltaTime);
 	virtual void TransporteTropas(bool DeltaTime);
 	virtual void OperacionRescate(bool DeltaTime);
-
 };

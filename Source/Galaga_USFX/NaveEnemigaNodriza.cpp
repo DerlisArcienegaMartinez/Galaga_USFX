@@ -10,10 +10,6 @@ void ANaveEnemigaNodriza::BeginPlay()
 
 ANaveEnemigaNodriza::ANaveEnemigaNodriza()
 {
-	/*VelocidadMovimiento = -30.0f; //Velocidad predeterminada
-	DireccionMovimiento = FVector(1.0f, 0.0f, 0.0f ); //Determina la direccion donde va la nave eje x*/
-	
-
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }

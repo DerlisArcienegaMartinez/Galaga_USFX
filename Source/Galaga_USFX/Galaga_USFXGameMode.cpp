@@ -4,38 +4,29 @@
 #include "Galaga_USFXPawn.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.h"
-
 //#include "NaveEnemigaTransporte.h"
-
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
 	// set default pawn class to our character class
-	PrimaryActorTick.bCanEverTick = true;
-	
-
-	
-	
-	//NaveEnemiga01 = nullptr;
-
-	}
+	PrimaryActorTick.bCanEverTick = true;	
+}
 void AGalaga_USFXGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	//Set the game state to playing
 
-	FVector ubicacionInicialNavesEnemigas = FVector(600.0f, -500.0f, 214.72f);
+	FVector ubicacionInicialNavesEnemigas = FVector(600.0f, -500.0f, 214.72f); //Ubicacion general de las naves
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
 	
-    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
+    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f); //Rotacion general de las naves
 
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
-
 		//NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave);
-		//NaveEnemigaCaza01 = World->SpawnActor<ANaveEnemigaCaza>(ubicacionNave02, rotacionNave);
-
+		
+		//Creacion de 5 NavesEnemigasCaza y posicionarlos uno a lado de otro en una ubicacion determinada
 		for (int i = 0; i < 2; i++) {
 			ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActualNaveEnemiga, rotacionNave);
 			NaveEnemigaCazaActual->SetNombre("nave enemiga caza " + FString::FromInt(i));
@@ -57,33 +48,24 @@ void AGalaga_USFXGameMode::BeginPlay()
 			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
 		}*/
 
-
-
+		//Visualizaciones de posiciones general de las naves
 		/*FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
 		GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas, 1.0f, true);*/
 
+		//Spawn de navesEnemigasCazas cada 5 segundos 
 		FTimerHandle FTHSpawnNaves;
 		GetWorld()->GetTimerManager().SetTimer(FTHSpawnNaves, this, &AGalaga_USFXGameMode::spawnNavesCazas, 5.0f, true);
-
-		
 	}
-
-
-
 }
 
 void AGalaga_USFXGameMode::spawnNavesCazas()
 {
-
+	//Ubicacion y rotacion que tendran las naves spawneadas
 		FVector SpawnNavesCazasLocation = FVector(600.0f, 200.0f, 214.72f); // Set your desired spawn location
 		FRotator SpawnNavesCazasRotation = FRotator(0.0f, 0.0f, 0.0f); // Set your desired spawn rotation
 		FActorSpawnParameters SpawnParams;
 		GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass(), SpawnNavesCazasLocation, SpawnNavesCazasRotation, SpawnParams);
-
-	
 }
-
-
 
 //void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()
 //{

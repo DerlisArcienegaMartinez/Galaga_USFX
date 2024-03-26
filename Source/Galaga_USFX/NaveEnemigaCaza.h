@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "NaveEnemiga.h"
+#include "Particles/ParticleSystem.h"
 #include "NaveEnemigaCaza.generated.h"
 
 /**
@@ -18,13 +19,8 @@ private:
 	int cantidadBombas;
 	float tamanioNave;
 	int Energia;
-
 	int cantidadMuniciones;
 	float velocidadNave;
-
-	
-
-
 
 public:
 
@@ -47,7 +43,6 @@ protected:
 public:
 	ANaveEnemigaCaza();
 
-
 	//llamar a cada fotograma
 	virtual void Tick(float DeltaTime) override;
 
@@ -64,13 +59,12 @@ public:
 	UPROPERTY()
 		float LimiteSuperior;
 
-	// Función para recibir daño
-	void RecibirDanio(float Cantidad);
+    virtual void RecibirDanio(float Cantidad);
 
 protected:
 	virtual void Mover(float DeltaTime);
-	virtual void Destruirse(float DeltaTime);
+	virtual void Destruirse();
 	virtual void Escapar(float DeltaTIme);
-	virtual void Atacar(float DeltaTime);
-
+	virtual void Disparar();
+	
 };

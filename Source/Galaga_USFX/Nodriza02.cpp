@@ -12,13 +12,10 @@ void ANodriza02::BeginPlay()
 	velocidad = -10.0f;
 	ancho = 20.0f;
 	MovementSpeed = -30.0f;
-
 }
 
 ANodriza02::ANodriza02()
 {
-
-
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }

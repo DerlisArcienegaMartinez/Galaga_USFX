@@ -89,5 +89,6 @@ protected:
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover);
 	void Destruirse(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Destruirse);
 	void Escapar(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Escapar);
-	void Atacar(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Atacar);
+	void Disparar(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Disparar);
+	void RecibirDanio(float Cantidad) PURE_VIRTUAL(ANaveEnemiga::RecibirDanio);
 };

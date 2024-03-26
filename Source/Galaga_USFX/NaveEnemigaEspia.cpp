@@ -19,10 +19,6 @@ void ANaveEnemigaEspia::BeginPlay()
 
 ANaveEnemigaEspia::ANaveEnemigaEspia()
 {
-
-	/*velocidadMovimiento = -30.0f;
-	direccionMovimiento = FVector(1.0f, 0.0f, 0.0f);*/
-
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }

@@ -60,7 +60,7 @@ void AGalaga_USFXProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherAc
 		{
 
 			// Reducir la energía de la nave enemiga
-			float const Cantidad = 25.0f; // Cantidad de daño que inflige la bala
+			float const Cantidad = 10.0f; // Cantidad de daño que inflige la bala
 			NaveEnemigaCaza->RecibirDanio(Cantidad);
 
 			// Eliminar la bala

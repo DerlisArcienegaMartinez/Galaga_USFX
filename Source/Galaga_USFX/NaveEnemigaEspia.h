@@ -23,7 +23,6 @@ private:
 	bool capacidadHackeo;
 	bool camuflaje;
 	
-
 public:
 	FORCEINLINE int GetTiempoAutodestruccion()const { return tiempoAutodestruccion; }
 	FORCEINLINE float GetTamanioNave()const { return tamanioNave; }
@@ -40,7 +39,6 @@ public:
 	FORCEINLINE void SetManiobrabilidad(bool _maniobrabilidad) { maniobrabilidad = _maniobrabilidad; }
 	FORCEINLINE void SetCapacidadHackeo(bool hackeo) { capacidadHackeo = hackeo; }
 	FORCEINLINE void SetCamuflaje(bool _camuflaje) { camuflaje = _camuflaje; }
-
 
 protected:
 	//Se llama cuando el juego comienza o cuando se genera
@@ -60,5 +58,4 @@ public:
 	virtual void Destruirse(float DeltaTime);
 	virtual void Escapar(float DeltaTIme);
 	virtual void Atacar(float DeltaTime);
-	
 };

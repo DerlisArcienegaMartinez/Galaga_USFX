@@ -1,37 +1,30 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "NaveEnemiga.h"
 #include "Components/StaticMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
 
-// Sets default values
+// Constructor
 ANaveEnemiga::ANaveEnemiga()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	//Configure este actor para que llame a Tick() en cada cuadro. Puede desactivar esto para mejorar el rendimiento si no lo necesita.
 	PrimaryActorTick.bCanEverTick = true;
-
-	//static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
-	// Create the mesh component
-	mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
-	//mallaNaveEnemiga->SetStaticMesh(malla.Object);
-	mallaNaveEnemiga->SetupAttachment(RootComponent);
-	RootComponent = mallaNaveEnemiga;
-
+	
+	mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh")); //Crear el componente de malla
+	mallaNaveEnemiga->SetupAttachment(RootComponent); // configurando el componente mallaNaveEnemiga como un subcomponente 
+	RootComponent = mallaNaveEnemiga; // estableciendo el componente mallaNaveEnemiga como el componente raíz del actor.
 }
 
-// Called when the game starts or when spawned
+// Se llama cuando comienza el juego o cuando se genera.
 void ANaveEnemiga::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
-// Called every frame
+// LLama a cada fragmento
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 

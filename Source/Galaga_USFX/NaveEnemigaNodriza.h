@@ -23,7 +23,6 @@ private:
 	float resistenciaDanio;
 	float combustible;
 	
-
 public:
 	FORCEINLINE float GetTamanioNave()const { return tamanioNave; }
 	FORCEINLINE int GetCantidadNavesAlmacenados()const { return cantidadNavesAlmacenados; }
@@ -50,7 +49,6 @@ protected:
 	UPROPERTY()
 		FVector DireccionMovimiento;
 	
-
 public:
 	ANaveEnemigaNodriza();
 	//llamar a cada fotograma

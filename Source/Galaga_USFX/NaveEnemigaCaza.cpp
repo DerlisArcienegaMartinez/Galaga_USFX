@@ -1,39 +1,39 @@
-//caza.cpp
+
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "NaveEnemigaCaza.h"
+#include "Kismet/GameplayStatics.h"
 
 
-// Called when the game starts or when spawned
+//BEGINPLAY: Se llama cuando comienza el juego o cuando se genera.
 void ANaveEnemigaCaza::BeginPlay()
 {
 	Super::BeginPlay();
 
-
-	VelocidadMovimiento = 1000.0f; //Velocidad predeterminada
+//MOVIMIENTOS DE NAVECAZA
+	VelocidadMovimiento = 300.0f; //Velocidad predeterminada
 	DireccionMovimiento = FVector(FMath::RandRange(-1000.0f, 1000.0f), FMath::RandRange(-1000.0f, 1000.0f), 0.f).GetSafeNormal(); // Dirección inicial aleatoria  //FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
 
+	//LIMITES DEL ESCENARIO
 	LimiteDerecho = 1000.0f;
 	LimiteInferior = -1200.0f;
 	LimiteIzquierdo = 0.0f;
 	LimiteSuperior = 1000.0f;
-
-
-
 }
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
+	//MALLA DE LA NAVE
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
-	Energia = 10; // Inicializar la energia que tendra la nave
-
+	//VIDA DE LA NAVE 
+	Energia = 50; // Inicializar la energia que tendra la nave
 }
 
 
-// Called every frame
+//TICK: Llama a cada fotograma
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -41,52 +41,40 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 }
 
 
-
-
+//FUNCIONES
 
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
+	FVector PosicionActual = GetActorLocation();  // Obtener la posición actual del actor
 
-// Obtener la posición actual del actor
-	FVector PosicionActual = GetActorLocation();
-
-	// Calcular el desplazamiento basado en la velocidad y tiempo transcurrido
+	/* CALCULAR EL DESPLAZAMIENTO BASADO EN LA VELOCIDAD Y TIEMPO TRANSCURRIDO */
 	FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
 	PosicionActual += Desplazamiento;
 
-	// Verificar los límites del escenario y cambiar la dirección de movimiento si es necesario
+	/* VERIFICAR LOS LIMITES DEL ESCENARIO Y CAMBIAR LA DIRECCION DE MOVIMIENTO SI ES NECESARIO */
 	if (PosicionActual.X < LimiteIzquierdo || PosicionActual.X > LimiteDerecho)
 	{
-		// Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
-		DireccionMovimiento.X *= -1.0f;
+		DireccionMovimiento.X *= -1.0f;   // Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
 	}
-
 	if (PosicionActual.Y < LimiteInferior || PosicionActual.Y > LimiteSuperior)
 	{
-		// Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
-		DireccionMovimiento.Y *= -1.0f;
+		DireccionMovimiento.Y *= -1.0f;   // Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
 	}
 
-	// Establecer la nueva posición del actor
-	SetActorLocation(PosicionActual);
-
+	SetActorLocation(PosicionActual);   // Establecer la nueva posición del actor
 }
 
-void ANaveEnemigaCaza::Destruirse(float DeltaTime)
+void ANaveEnemigaCaza::Destruirse()
 {
 }
-
-
 
 void ANaveEnemigaCaza::RecibirDanio(float Cantidad)
 {
-	Energia -= Cantidad; // Reducir la energía según la cantidad de daño recibido
-
-	// Verificar si la energía llega a cero o menos
-	if (Energia <= 0)
+	Energia -= Cantidad;    // Reducir la energía según la cantidad de daño recibido
+	
+	if (Energia <= 0)        // Verificar si la energía llega a cero o menos
 	{
-		// La nave ha sido destruida
-		Destroy();
+		Destroy();       // La nave ha sido destruida
 	}
 }
 
@@ -94,7 +82,7 @@ void ANaveEnemigaCaza::Escapar(float DeltaTIme)
 {
 }
 
-void ANaveEnemigaCaza::Atacar(float DeltaTime)
+void ANaveEnemigaCaza::Disparar()
 {
 }
 
