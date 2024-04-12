@@ -4,6 +4,7 @@
 
 #include "NaveEnemigaCaza.h"
 #include "Kismet/GameplayStatics.h"
+#include"Bomba.h"
 
 
 //BEGINPLAY: Se llama cuando comienza el juego o cuando se genera.
@@ -11,15 +12,17 @@ void ANaveEnemigaCaza::BeginPlay()
 {
 	Super::BeginPlay();
 
-//MOVIMIENTOS DE NAVECAZA
+//MOVIMIENTOS DE NAVE CAZA
 	VelocidadMovimiento = 300.0f; //Velocidad predeterminada
-	DireccionMovimiento = FVector(FMath::RandRange(-1000.0f, 1000.0f), FMath::RandRange(-1000.0f, 1000.0f), 0.f).GetSafeNormal(); // Dirección inicial aleatoria  //FVector(1.0f, 0.0f, 0.0f); //Determina la direccion donde va la nave eje x
+	DireccionMovimiento = FVector(0.0f, 1.0f, 0.0f);
 
 	//LIMITES DEL ESCENARIO
-	LimiteDerecho = 1000.0f;
-	LimiteInferior = -1200.0f;
-	LimiteIzquierdo = 0.0f;
-	LimiteSuperior = 1000.0f;
+	LimiteDerecho = 1870.0f;         //Y
+	LimiteInferior = -1950.0f;      //-X
+	LimiteIzquierdo = -1870.0f;     //-Y
+	LimiteSuperior = 1950.0f;        //X
+
+	SetupBombaClass(); //configura el primer tiempo de lanzamiento de la bomba al inicio del juego.	
 }
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
@@ -28,16 +31,30 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
-	//VIDA DE LA NAVE 
-	Energia = 50; // Inicializar la energia que tendra la nave
-}
+	BombaClass = ABomba::StaticClass(); //inicializa la propiedad BombaClass con la clase estática y lo llama constantemente
 
+	//VIDA DE LA NAVE 
+	Energia = 0; // Inicializar la energia que tendra la nave
+
+	//intervalo de tiempo entre cada bomba(en segundos)
+	IntervaloLanzarBombaMin = 3.0f;
+	IntervaloLanzarBombaMax = 6.0f;
+	TiempoUltimoLanzamiento = 0.0f;
+}
 
 //TICK: Llama a cada fotograma
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	Mover(DeltaTime);
+
+	// Verificar si es el momento de lanzar una bomba
+	TiempoUltimoLanzamiento += DeltaTime;
+	if (TiempoUltimoLanzamiento >= TiempoProximoLanzamiento)
+	{
+		SoltarBomba();
+		SetupBombaClass();
+	}
 }
 
 
@@ -45,6 +62,7 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
+
 	FVector PosicionActual = GetActorLocation();  // Obtener la posición actual del actor
 
 	/* CALCULAR EL DESPLAZAMIENTO BASADO EN LA VELOCIDAD Y TIEMPO TRANSCURRIDO */
@@ -52,20 +70,51 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 	PosicionActual += Desplazamiento;
 
 	/* VERIFICAR LOS LIMITES DEL ESCENARIO Y CAMBIAR LA DIRECCION DE MOVIMIENTO SI ES NECESARIO */
-	if (PosicionActual.X < LimiteIzquierdo || PosicionActual.X > LimiteDerecho)
+	if (PosicionActual.X < LimiteInferior || PosicionActual.X > LimiteSuperior)
 	{
 		DireccionMovimiento.X *= -1.0f;   // Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
 	}
-	if (PosicionActual.Y < LimiteInferior || PosicionActual.Y > LimiteSuperior)
+	if (PosicionActual.Y < LimiteIzquierdo || PosicionActual.Y > LimiteDerecho)
 	{
 		DireccionMovimiento.Y *= -1.0f;   // Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
 	}
 
 	SetActorLocation(PosicionActual);   // Establecer la nueva posición del actor
+
 }
 
 void ANaveEnemigaCaza::Destruirse()
 {
+}
+
+void ANaveEnemigaCaza::SoltarBomba()
+{
+	if (BombaClass)
+	{
+		// Obtener la ubicación de la nave enemiga para soltar la bomba
+		FVector SpawnLocation = GetActorLocation();
+
+		// Spawnea la bomba
+		ABomba* Bomba = GetWorld()->SpawnActor<ABomba>(BombaClass, SpawnLocation, FRotator::ZeroRotator);
+
+		if (Bomba)
+		{
+			// Configurar la velocidad de la bomba
+			Bomba->SetVelocidadBomba(500.0f);
+		}
+	}
+	
+}
+
+
+void ANaveEnemigaCaza::SetupBombaClass()
+{
+	
+	// Generar un nuevo intervalo aleatorio
+	float NuevoIntervalo = FMath::RandRange(IntervaloLanzarBombaMin, IntervaloLanzarBombaMax);
+
+	// Configurar el próximo tiempo de lanzamiento
+	TiempoProximoLanzamiento = TiempoUltimoLanzamiento + NuevoIntervalo;
 }
 
 void ANaveEnemigaCaza::RecibirDanio(float Cantidad)

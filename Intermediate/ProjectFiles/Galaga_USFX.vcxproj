@@ -54,7 +54,7 @@
     <ProjectGuid>{C4E70707-98CE-45E8-B1E4-B504FA3F9E73}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>Galaga_USFX</RootNamespace>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <TargetRuntime>Native</TargetRuntime>
@@ -72,52 +72,52 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '15.0'">v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -303,6 +303,11 @@
       <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX\Caza02.h" />
+    <ClCompile Include="..\..\Source\Galaga_USFX\ComponenteBomba.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\ComponenteBomba.h" />
     <ClCompile Include="..\..\Source\Galaga_USFX\Espia01.cpp">
       <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
@@ -334,6 +339,11 @@
       <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
     </ClCompile>
     <ClInclude Include="..\..\Source\Galaga_USFX\Galaga_USFXProjectile.h" />
+    <ClCompile Include="..\..\Source\Galaga_USFX\Invisibilidad.cpp">
+      <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Galaga_USFX\Invisibilidad.h" />
     <ClCompile Include="..\..\Source\Galaga_USFX\NaveEnemiga.cpp">
       <AdditionalIncludeDirectories>$(NMakeIncludeSearchPath);C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\cudamanager;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\filebuf;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\foundation;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\pvd;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PxShared\include\task;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\cooking;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\common;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\extensions;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\PhysX_3.4\Include\geometry;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\clothing;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\nvparameterized;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\legacy;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\include\PhysX3;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\common\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\framework\include\autogen;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include;C:\Program Files\Epic Games\UE_4.25\Engine\Source\ThirdParty\PhysX3\APEX_1.4\shared\internal\include;</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(NMakeForcedIncludes);$(SolutionDir)Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX\Definitions.Galaga_USFX.h;$(SolutionDir)Intermediate\Build\Win64\Galaga_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h</ForcedIncludeFiles>

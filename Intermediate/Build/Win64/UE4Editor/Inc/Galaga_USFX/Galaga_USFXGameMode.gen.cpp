@@ -17,8 +17,6 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 	GALAGA_USFX_API UClass* Z_Construct_UClass_AGalaga_USFXGameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX();
-	GALAGA_USFX_API UClass* Z_Construct_UClass_ANaveEnemiga_NoRegister();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
 	void AGalaga_USFXGameMode::StaticRegisterNativesAGalaga_USFXGameMode()
 	{
@@ -33,13 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TMPosicionesNavesEnemigas_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FMapPropertyParams NewProp_TMPosicionesNavesEnemigas;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_TMPosicionesNavesEnemigas_Key_KeyProp;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TMPosicionesNavesEnemigas_ValueProp;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -49,29 +40,12 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXGameMode_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "//class ANaveEnemigaTransporte;\n" },
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
 		{ "IncludePath", "Galaga_USFXGameMode.h" },
 		{ "ModuleRelativePath", "Galaga_USFXGameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
-		{ "ToolTip", "class ANaveEnemigaTransporte;" },
 	};
 #endif
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_MetaData[] = {
-		{ "Comment", "/*TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;\n\x09TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;\n\x09TArray<ANaveEnemigaNodriza*> TANavesEnemigasNodriza;\n\x09TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;*/" },
-		{ "ModuleRelativePath", "Galaga_USFXGameMode.h" },
-		{ "ToolTip", "TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;\n       TArray<ANaveEnemigaEspia*> TANavesEnemigasEspia;\n       TArray<ANaveEnemigaNodriza*> TANavesEnemigasNodriza;\n       TArray<ANaveEnemigaReabastecimiento*> TANavesEnemigasReabastecimiento;" },
-	};
-#endif
-	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas = { "TMPosicionesNavesEnemigas", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFXGameMode, TMPosicionesNavesEnemigas), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_MetaData)) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_Key_KeyProp = { "TMPosicionesNavesEnemigas_Key", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ANaveEnemiga_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_ValueProp = { "TMPosicionesNavesEnemigas", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 1, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGalaga_USFXGameMode_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_Key_KeyProp,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFXGameMode_Statics::NewProp_TMPosicionesNavesEnemigas_ValueProp,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFXGameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFXGameMode>::IsAbstract,
 	};
@@ -81,11 +55,11 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		Z_Construct_UClass_AGalaga_USFXGameMode_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXGameMode_Statics::PropPointers),
+		0,
 		0,
 		0x008802ACu,
 		METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFXGameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFXGameMode_Statics::Class_MetaDataParams))
@@ -99,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFXGameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 234847407);
+	IMPLEMENT_CLASS(AGalaga_USFXGameMode, 1924447679);
 	template<> GALAGA_USFX_API UClass* StaticClass<AGalaga_USFXGameMode>()
 	{
 		return AGalaga_USFXGameMode::StaticClass();

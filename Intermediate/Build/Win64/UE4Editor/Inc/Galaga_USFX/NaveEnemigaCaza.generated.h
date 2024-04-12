@@ -58,7 +58,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigaCaza); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANaveEnemigaCaza)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaCaza_h_16_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaCaza_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__BombaClass() { return STRUCT_OFFSET(ANaveEnemigaCaza, BombaClass); }
+
+
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaCaza_h_13_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaCaza_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

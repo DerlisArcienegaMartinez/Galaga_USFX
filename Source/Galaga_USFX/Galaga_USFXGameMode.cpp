@@ -4,7 +4,6 @@
 #include "Galaga_USFXPawn.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.h"
-//#include "NaveEnemigaTransporte.h"
 
 AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 {
@@ -14,79 +13,35 @@ AGalaga_USFXGameMode::AGalaga_USFXGameMode()
 void AGalaga_USFXGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
 	//Set the game state to playing
 
 	FVector ubicacionInicialNavesEnemigas = FVector(600.0f, -500.0f, 214.72f); //Ubicacion general de las naves
 	FVector ubicacionActualNaveEnemiga = ubicacionInicialNavesEnemigas;
-	
-    FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f); //Rotacion general de las naves
+
+	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f); //Rotacion general de las naves
 
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
-		//NaveEnemigaTransporte01 = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionNave01, rotacionNave);
-		
-		//Creacion de 5 NavesEnemigasCaza y posicionarlos uno a lado de otro en una ubicacion determinada
-		for (int i = 0; i < 2; i++) {
-			ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActualNaveEnemiga, rotacionNave);
-			NaveEnemigaCazaActual->SetNombre("nave enemiga caza " + FString::FromInt(i));
-			TANavesEnemigas.Add(NaveEnemigaCazaActual);
-			TMPosicionesNavesEnemigas.Add(NaveEnemigaCazaActual, ubicacionActualNaveEnemiga);
 
-			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
+		//Creacion de 5 NavesEnemigasCaza y posicionarlos uno a lado de otro en una ubicacion determinada
+		for (int i = 0; i < 5; i++) {
+			ANaveEnemigaCaza* NaveEnemigaCazaActual = World->SpawnActor<ANaveEnemigaCaza>(ubicacionActualNaveEnemiga, rotacionNave);
+			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 300.0f;
 		}
 
-		/*ubicacionActualNaveEnemiga.X = ubicacionActualNaveEnemiga.X - 150.0f;
-		ubicacionActualNaveEnemiga.Y = ubicacionInicialNavesEnemigas.Y;
-		for (int j = 0; j < 5; j++) {
-
-			ANaveEnemigaTransporte* NaveEnemigaTransporteActual = World->SpawnActor<ANaveEnemigaTransporte>(ubicacionActualNaveEnemiga, rotacionNave);
-			NaveEnemigaTransporteActual->SetNombre("nave enemiga transporte" + FString::FromInt(j));
-			TANavesEnemigas.Add(NaveEnemigaTransporteActual);
-			TMPosicionesNavesEnemigas.Add(NaveEnemigaTransporteActual, ubicacionActualNaveEnemiga);
-
-			ubicacionActualNaveEnemiga.Y = ubicacionActualNaveEnemiga.Y + 150.0f;
-		}*/
-
-		//Visualizaciones de posiciones general de las naves
-		/*FTimerHandle FTHVisualizacionPosicionesNavesEnemigas;
-		GetWorldTimerManager().SetTimer(FTHVisualizacionPosicionesNavesEnemigas, this, &AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas, 1.0f, true);*/
-
-		//Spawn de navesEnemigasCazas cada 5 segundos 
-		FTimerHandle FTHSpawnNaves;
-		GetWorld()->GetTimerManager().SetTimer(FTHSpawnNaves, this, &AGalaga_USFXGameMode::spawnNavesCazas, 5.0f, true);
 	}
+	
 }
 
-void AGalaga_USFXGameMode::spawnNavesCazas()
-{
-	//Ubicacion y rotacion que tendran las naves spawneadas
-		FVector SpawnNavesCazasLocation = FVector(600.0f, 200.0f, 214.72f); // Set your desired spawn location
-		FRotator SpawnNavesCazasRotation = FRotator(0.0f, 0.0f, 0.0f); // Set your desired spawn rotation
-		FActorSpawnParameters SpawnParams;
-		GetWorld()->SpawnActor<ANaveEnemigaCaza>(ANaveEnemigaCaza::StaticClass(), SpawnNavesCazasLocation, SpawnNavesCazasRotation, SpawnParams);
-}
 
-//void AGalaga_USFXGameMode::MostrarPosicionesNavesEnemigas()
-//{
-//
-//	for (auto ElementoActual : TMPosicionesNavesEnemigas) {
-//		ANaveEnemiga* naveEnemigaActual = ElementoActual.Key;
-//		FVector posicionActualNaveEnemiga = ElementoActual.Value;
-//		FString mensaje = "La nave " + naveEnemigaActual->GetNombre() + " esta en la posicion> " + posicionActualNaveEnemiga.ToString();
-//
-//		if (GEngine)
-//		{
-//			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, mensaje);
-//
-//			/*FString mensaje = "Nombre NaveEnemiga: " + Clave->GetNombre() + " Posicion NaveEnemiga: " + Valor.ToString();
-//			GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, mensaje);*/
-//
-//		}
-//
-//		TMPosicionesNavesEnemigas[naveEnemigaActual] = naveEnemigaActual->GetActorLocation();
-//	}
-//
-//}
+
+
+
+
+
+
+
 
 

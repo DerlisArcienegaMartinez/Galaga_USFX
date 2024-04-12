@@ -46,25 +46,36 @@ public:
 	//llamar a cada fotograma
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY()
-		float VelocidadMovimiento;
-	UPROPERTY()
-		FVector DireccionMovimiento;
-	UPROPERTY()
-		float LimiteIzquierdo;
-	UPROPERTY()
-		float LimiteDerecho;
-	UPROPERTY()
-		float LimiteInferior;
-	UPROPERTY()
-		float LimiteSuperior;
+private:
 
+	//SPAWNEAR LA CLASE BOMBA
+	UPROPERTY(EditAnywhere, Category = "Bomba")
+		TSubclassOf<class ABomba> BombaClass;//creacion de la subclase BombaClass
+	float IntervaloLanzarBombaMin;
+	float IntervaloLanzarBombaMax;
+	float TiempoUltimoLanzamiento;
+	float TiempoProximoLanzamiento;
+    float VelocidadMovimiento;
+    FVector DireccionMovimiento;
+		
+public:
+	//FUNCIONES DE LA BOMBA
+		void SoltarBomba();
+		void SetupBombaClass();
+
+public:
+	UPROPERTY()
+	float LimiteIzquierdo;
+	float LimiteDerecho;
+	float LimiteInferior;
+	float LimiteSuperior;
     virtual void RecibirDanio(float Cantidad);
 
 protected:
 	virtual void Mover(float DeltaTime);
 	virtual void Destruirse();
 	virtual void Escapar(float DeltaTIme);
-	virtual void Disparar();
-	
+	virtual void Disparar();	
+
+
 };
