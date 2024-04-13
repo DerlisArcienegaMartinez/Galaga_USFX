@@ -58,11 +58,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANaveEnemigaNodriza); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ANaveEnemigaNodriza)
 
 
-#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaNodriza_h_15_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__VelocidadMovimiento() { return STRUCT_OFFSET(ANaveEnemigaNodriza, VelocidadMovimiento); } \
-	FORCEINLINE static uint32 __PPO__DireccionMovimiento() { return STRUCT_OFFSET(ANaveEnemigaNodriza, DireccionMovimiento); }
-
-
+#define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaNodriza_h_15_PRIVATE_PROPERTY_OFFSET
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaNodriza_h_12_PROLOG
 #define Galaga_USFX_Source_Galaga_USFX_NaveEnemigaNodriza_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

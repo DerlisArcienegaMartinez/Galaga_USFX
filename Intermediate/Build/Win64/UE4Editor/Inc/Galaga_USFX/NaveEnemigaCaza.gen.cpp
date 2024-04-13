@@ -65,7 +65,9 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_BombaClass_MetaData[] = {
 		{ "Category", "Bomba" },
+		{ "Comment", "//SPAWNEAR LA CLASE BOMBA\n" },
 		{ "ModuleRelativePath", "NaveEnemigaCaza.h" },
+		{ "ToolTip", "SPAWNEAR LA CLASE BOMBA" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_BombaClass = { "BombaClass", nullptr, (EPropertyFlags)0x0044000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANaveEnemigaCaza, BombaClass), Z_Construct_UClass_ABomba_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_BombaClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANaveEnemigaCaza_Statics::NewProp_BombaClass_MetaData)) };
@@ -100,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCaza() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaCaza, 297284399);
+	IMPLEMENT_CLASS(ANaveEnemigaCaza, 2235785136);
 	template<> GALAGA_USFX_API UClass* StaticClass<ANaveEnemigaCaza>()
 	{
 		return ANaveEnemigaCaza::StaticClass();

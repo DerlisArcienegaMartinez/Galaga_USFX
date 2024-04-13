@@ -20,7 +20,7 @@ private:
 	UPROPERTY()
 		float VelocidadBomba; // Velocidad de caída de la bomba
 
-public:	
+public:
 	// Sets default values for this actor's properties
 	ABomba();
 	void SetVelocidadBomba(float velocidadBomba) { VelocidadBomba = velocidadBomba; }
@@ -34,5 +34,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
+public:
+	
+	void DestruirBomba();
 };

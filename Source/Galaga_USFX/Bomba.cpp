@@ -16,7 +16,7 @@ ABomba::ABomba()
     RootComponent = BombaMesh;
 
     // Cargar una malla estática para la bomba (debes asignar una malla en el editor)
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> BombaMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> BombaMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Bomb.Bomb'"));
     if (BombaMeshAsset.Succeeded())
     {
         BombaMesh->SetStaticMesh(BombaMeshAsset.Object);
@@ -30,20 +30,26 @@ ABomba::ABomba()
 void ABomba::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	FTimerHandle BombaDestruida;
+	GetWorld()->GetTimerManager().SetTimer(BombaDestruida, this, &ABomba::DestruirBomba, 5.0f, true);
+
 }
 
 // Called every frame
 void ABomba::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 	// Mover la bomba hacia abajo en el eje Z
 	FVector NewLocation = GetActorLocation();
 	NewLocation += FVector(-VelocidadBomba * DeltaTime, 0.0f, 0.0f); // Mover hacia abajo
 	SetActorLocation(NewLocation);
+	
 }
 
 
-
+void ABomba::DestruirBomba()
+{
+	Destroy();
+}
 

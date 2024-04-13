@@ -31,10 +31,12 @@ protected:
 	int trayectoria;
 	int capacidadPasajeros;
 	int capacidadMunicion;
-	int tipoNave;
+	FString tipoNave;
 
 	float peso;
 	float volumen;
+
+
 
 public:
 	// Metodos accesores
@@ -50,7 +52,7 @@ public:
 	FORCEINLINE int GetTrayectoria() const { return trayectoria; }
 	FORCEINLINE int GetCapacidadPasajeros()const { return capacidadPasajeros; }
 	FORCEINLINE int GetCapacidadMunicion() { return capacidadMunicion; }
-	FORCEINLINE int GetTipoNave() const { return tipoNave; }
+	FORCEINLINE FString GetTipoNave() const { return tipoNave; }
 	FORCEINLINE float GetPeso() const { return peso; }
 	FORCEINLINE float GetVolumen() const { return volumen; }
 
@@ -68,9 +70,11 @@ public:
 	FORCEINLINE void SetTrayectoria(int _trayectoria) { trayectoria = _trayectoria; }
 	FORCEINLINE void SetCapacidadPasajeros(int _capacidadPasajeros) { capacidadPasajeros = _capacidadPasajeros; }
 	FORCEINLINE void SetCapacidadMunicion(int _capacidadMunicion) { capacidadMunicion = _capacidadMunicion; }
-	FORCEINLINE void SetTipoNave(int _tipoNave) { tipoNave = _tipoNave; }
+	FORCEINLINE void SetTipoNave(FString _tipoNave) { tipoNave = _tipoNave; }
 	FORCEINLINE void SetPeso(float _peso) { peso = _peso; }
 	FORCEINLINE void SetVolumen(float _volumen) { volumen = _volumen; }
+
+
 
 	
 public:	

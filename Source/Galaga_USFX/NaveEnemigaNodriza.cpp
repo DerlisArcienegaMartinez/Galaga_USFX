@@ -6,11 +6,22 @@
 void ANaveEnemigaNodriza::BeginPlay()
 {
 	Super::BeginPlay();
+
+    //LIMITES DEL ESCENARIO
+    LimiteDerecho = 1870.0f;         //Y
+    LimiteInferior = -1950.0f;      //-X
+    LimiteIzquierdo = -1870.0f;     //-Y
+    LimiteSuperior = 1950.0f;        //X
+
+	velocidad = 200.0f;
+    direccion = FVector(-1.0f, 0.0f, 0.0f);
 }
 
 ANaveEnemigaNodriza::ANaveEnemigaNodriza()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	PrimaryActorTick.bCanEverTick = true;
+
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/ImageToStl_com_jim+nichols+ufo+1.ImageToStl_com_jim+nichols+ufo+1'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 }
 
@@ -23,18 +34,24 @@ void ANaveEnemigaNodriza::Tick(float DeltaTime)
 
 void ANaveEnemigaNodriza::Mover(float DeltaTime)
 {
-	// Obtiene la posición actual del actor
-	FVector PosicionActual = GetActorLocation();
 
-	// Genera nuevas coordenadas X e Y aleatorias
-	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
-	float NuevaY = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
+    FVector PosicionActual = GetActorLocation();  // Obtener la posición actual del actor
 
-	// Crea un nuevo vector de posición con las coordenadas aleatorias y la misma Z que la posición actual
-	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z);
+/* CALCULAR EL DESPLAZAMIENTO BASADO EN LA VELOCIDAD Y TIEMPO TRANSCURRIDO */
+    FVector Desplazamiento = direccion*velocidad* DeltaTime;
+    PosicionActual += Desplazamiento;
 
-	// Establece la nueva posición del actor
-	SetActorLocation(NuevaPosicion);
+    /* VERIFICAR LOS LIMITES DEL ESCENARIO Y CAMBIAR LA DIRECCION DE MOVIMIENTO SI ES NECESARIO */
+    if (PosicionActual.X < LimiteInferior || PosicionActual.X > LimiteSuperior)
+    {
+        direccion.X *= -1.0f;   // Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
+    }
+    if (PosicionActual.Y < LimiteIzquierdo || PosicionActual.Y > LimiteDerecho)
+    {
+        direccion.Y *= -1.0f;   // Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
+    }
+
+    SetActorLocation(PosicionActual);   // Establecer la nueva posición del actor
 }
 
 void ANaveEnemigaNodriza::Destruirse(float DeltaTime)
@@ -45,7 +62,11 @@ void ANaveEnemigaNodriza::Escapar(float DeltaTIme)
 {
 }
 
-void ANaveEnemigaNodriza::Atacar(float DeltaTime)
+void ANaveEnemigaNodriza::Disparar(float DeltaTime)
+{
+}
+
+void ANaveEnemigaNodriza::RecibirDanio(float Cantidad)
 {
 }
 
@@ -60,3 +81,4 @@ void ANaveEnemigaNodriza::MantenimientoNaves(bool DeltaTime)
 void ANaveEnemigaNodriza::DespliegueNavesAuxiliares(float DeltaTime)
 {
 }
+

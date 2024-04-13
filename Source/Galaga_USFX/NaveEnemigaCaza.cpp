@@ -28,7 +28,7 @@ void ANaveEnemigaCaza::BeginPlay()
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
 	//MALLA DE LA NAVE
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/model.model'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
 	BombaClass = ABomba::StaticClass(); //inicializa la propiedad BombaClass con la clase estática y lo llama constantemente
@@ -38,7 +38,7 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 
 	//intervalo de tiempo entre cada bomba(en segundos)
 	IntervaloLanzarBombaMin = 3.0f;
-	IntervaloLanzarBombaMax = 6.0f;
+	IntervaloLanzarBombaMax = 7.0f;
 	TiempoUltimoLanzamiento = 0.0f;
 }
 
@@ -100,7 +100,7 @@ void ANaveEnemigaCaza::SoltarBomba()
 		if (Bomba)
 		{
 			// Configurar la velocidad de la bomba
-			Bomba->SetVelocidadBomba(500.0f);
+			Bomba->SetVelocidadBomba(400.0f);
 		}
 	}
 	
