@@ -3,41 +3,44 @@
 
 #include "NaveEnemigaTransporte.h"
 
-void ANaveEnemigaTransporte::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
-}
+
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> malla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(malla.Object);
 
-	dimensionCargaOcupada = 300.0f;
-	dimensionCargaDisponible = 700.0f;
 }
+
+void ANaveEnemigaTransporte::BeginPlay()
+{
+	Super::BeginPlay();
+
+	direccionMovimiento = FVector(-1.0f, 0.0, 0.0f);
+	velocidadMovimiento = 150.0f;
+}
+
+void ANaveEnemigaTransporte::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	Mover(DeltaTime);
+}
+
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-	// Obtiene la posición actual del actor
-	FVector PosicionActual = GetActorLocation();
+	FVector PosicionActual = GetActorLocation();  // Obtener la posición actual del actor
 
-	// Genera nuevas coordenadas X e Y aleatorias
-	float NuevaX = FMath::RandRange(-1000.0f, 1000.0f) * (DeltaTime / 1000.0f);
-	float NuevaY = FMath::RandRange(-1000.0f, 1000.0f) * (DeltaTime / 1000.0f);
-	float NuevaZ = FMath::RandRange(-1000.0f, 1000.0f) * DeltaTime;
+		/* CALCULAR EL DESPLAZAMIENTO BASADO EN LA VELOCIDAD Y TIEMPO TRANSCURRIDO */
+	FVector Desplazamiento = direccionMovimiento * velocidadMovimiento * DeltaTime;
+	PosicionActual += Desplazamiento;
 
-	// Crea un nuevo vector de posición con las coordenadas aleatorias y la misma Z que la posición actual
-	FVector NuevaPosicion = FVector(PosicionActual.X + NuevaX, PosicionActual.Y + NuevaY, PosicionActual.Z + NuevaZ);
 
-	// Establece la nueva posición del actor
-	SetActorLocation(NuevaPosicion);
+	SetActorLocation(PosicionActual);   // Establecer la nueva posición del actor
 }
 
-void ANaveEnemigaTransporte::Cargar(float dimensionCarga, float pesoCarga)
+void ANaveEnemigaTransporte::Cargar()
 {
-	dimensionCargaOcupada = dimensionCargaDisponible - dimensionCarga;
 }
 
 void ANaveEnemigaTransporte::Destruirse(float DeltaTime)

@@ -1,4 +1,0 @@
-EJERCICIO 4
-4. Crear una nave enemiga que se dezplace de izquierda a derecha y de derecha a izquierda y vayan soltando un objeto bomba de manera aleatoria.
-
-https://github.com/DerlisArcienegaMartinez/Galaga_USFX.git

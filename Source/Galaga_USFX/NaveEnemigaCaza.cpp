@@ -13,8 +13,9 @@ void ANaveEnemigaCaza::BeginPlay()
 	Super::BeginPlay();
 
 //MOVIMIENTOS DE NAVE CAZA
-	VelocidadMovimiento = 300.0f; //Velocidad predeterminada
-	DireccionMovimiento = FVector(0.0f, 1.0f, 0.0f);
+	velocidadMovimiento = 300.0f; //Velocidad predeterminada
+	direccionMovimiento = FVector(0.0f, 1.0f, 0.0f);
+
 
 	//LIMITES DEL ESCENARIO
 	LimiteDerecho = 1870.0f;         //Y
@@ -34,7 +35,8 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	BombaClass = ABomba::StaticClass(); //inicializa la propiedad BombaClass con la clase estática y lo llama constantemente
 
 	//VIDA DE LA NAVE 
-	Energia = 0; // Inicializar la energia que tendra la nave
+	energia = 50; // Inicializar la energia que tendra la nave
+	resistencia = 30;
 
 	//intervalo de tiempo entre cada bomba(en segundos)
 	IntervaloLanzarBombaMin = 3.0f;
@@ -66,17 +68,17 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 	FVector PosicionActual = GetActorLocation();  // Obtener la posición actual del actor
 
 	/* CALCULAR EL DESPLAZAMIENTO BASADO EN LA VELOCIDAD Y TIEMPO TRANSCURRIDO */
-	FVector Desplazamiento = DireccionMovimiento * VelocidadMovimiento * DeltaTime;
+	FVector Desplazamiento = direccionMovimiento * velocidadMovimiento * DeltaTime;
 	PosicionActual += Desplazamiento;
 
 	/* VERIFICAR LOS LIMITES DEL ESCENARIO Y CAMBIAR LA DIRECCION DE MOVIMIENTO SI ES NECESARIO */
 	if (PosicionActual.X < LimiteInferior || PosicionActual.X > LimiteSuperior)
 	{
-		DireccionMovimiento.X *= -1.0f;   // Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
+		direccionMovimiento.X *= -1.0f;   // Invertir la dirección en el eje X para rebotar en la pared izquierda o derecha
 	}
 	if (PosicionActual.Y < LimiteIzquierdo || PosicionActual.Y > LimiteDerecho)
 	{
-		DireccionMovimiento.Y *= -1.0f;   // Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
+		direccionMovimiento.Y *= -1.0f;   // Invertir la dirección en el eje Y para rebotar en la pared inferior o superior
 	}
 
 	SetActorLocation(PosicionActual);   // Establecer la nueva posición del actor
@@ -119,9 +121,14 @@ void ANaveEnemigaCaza::SetupBombaClass()
 
 void ANaveEnemigaCaza::RecibirDanio(float Cantidad)
 {
-	Energia -= Cantidad;    // Reducir la energía según la cantidad de daño recibido
-	
-	if (Energia <= 0)        // Verificar si la energía llega a cero o menos
+	resistencia -= Cantidad;
+
+	if (resistencia <= 0)
+	{
+
+		energia -= Cantidad;    // Reducir la energía según la cantidad de daño recibido
+	}
+	if (energia <= 0)        // Verificar si la energía llega a cero o menos
 	{
 		Destroy();       // La nave ha sido destruida
 	}

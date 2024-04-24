@@ -18,23 +18,24 @@ public:
 		UStaticMeshComponent* mallaNaveEnemiga;
 
 protected:
+
+    FString nombre;
+	FString tipoNave;
+	FVector posicion;
+	FVector direccionMovimiento;
+
+	float energia;
 	float velocidad;
+	float velocidadMovimiento;
 	float resistencia;
+	float experiencia;
+	float tiempoDisparo;
 	float danoProducido;
 	float valorDestruccion;
-	float experiencia;
-	float energia;
-	FString nombre;
-	float tiempoDisparo;
-	FVector posicion;
 
-	int trayectoria;
-	int capacidadPasajeros;
-	int capacidadMunicion;
-	FString tipoNave;
 
-	float peso;
-	float volumen;
+	
+
 
 
 
@@ -49,13 +50,9 @@ public:
 	FORCEINLINE float GetEnergia() const { return energia; }
 	FORCEINLINE FString GetNombre() const { return nombre; }
 	FORCEINLINE FVector GetPosicion() const { return posicion; }
-	FORCEINLINE int GetTrayectoria() const { return trayectoria; }
-	FORCEINLINE int GetCapacidadPasajeros()const { return capacidadPasajeros; }
-	FORCEINLINE int GetCapacidadMunicion() { return capacidadMunicion; }
 	FORCEINLINE FString GetTipoNave() const { return tipoNave; }
-	FORCEINLINE float GetPeso() const { return peso; }
-	FORCEINLINE float GetVolumen() const { return volumen; }
-
+	FORCEINLINE float GetVelocidadMovimiento() const { return velocidadMovimiento; }
+	FORCEINLINE FVector GetDireccionMovimiento() const { return direccionMovimiento; }
 
 
 	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
@@ -67,13 +64,9 @@ public:
 	FORCEINLINE void SetEnergia(float _energia) { energia = _energia; }
 	FORCEINLINE void SetNombre(FString _nombre) { nombre = _nombre; }
 	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion; }
-	FORCEINLINE void SetTrayectoria(int _trayectoria) { trayectoria = _trayectoria; }
-	FORCEINLINE void SetCapacidadPasajeros(int _capacidadPasajeros) { capacidadPasajeros = _capacidadPasajeros; }
-	FORCEINLINE void SetCapacidadMunicion(int _capacidadMunicion) { capacidadMunicion = _capacidadMunicion; }
 	FORCEINLINE void SetTipoNave(FString _tipoNave) { tipoNave = _tipoNave; }
-	FORCEINLINE void SetPeso(float _peso) { peso = _peso; }
-	FORCEINLINE void SetVolumen(float _volumen) { volumen = _volumen; }
-
+	FORCEINLINE void SetVelocidadMovimiento(float VelocidadMovimiento) { velocidadMovimiento = VelocidadMovimiento; }
+	FORCEINLINE void SetDireccionMovimiento(FVector DireccionMovimiento) { direccionMovimiento = DireccionMovimiento; }
 
 
 	
