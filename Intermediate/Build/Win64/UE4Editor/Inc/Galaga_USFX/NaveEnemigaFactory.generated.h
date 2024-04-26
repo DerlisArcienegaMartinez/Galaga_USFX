@@ -8,10 +8,10 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ANaveEnemiga;
 struct FVector;
 struct FRotator;
 class UObject;
+class ANaveEnemiga;
 #ifdef GALAGA_USFX_NaveEnemigaFactory_generated_h
 #error "NaveEnemigaFactory.generated.h already included, missing '#pragma once' in NaveEnemigaFactory.h"
 #endif

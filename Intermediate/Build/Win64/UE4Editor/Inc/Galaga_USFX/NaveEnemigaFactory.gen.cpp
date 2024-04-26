@@ -21,17 +21,16 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 // End Cross Module References
 	DEFINE_FUNCTION(UNaveEnemigaFactory::execCrearNaveEnemiga)
 	{
-		P_GET_OBJECT(UClass,Z_Param_ClaseNave);
+		P_GET_PROPERTY(FStrProperty,Z_Param_NombreNave);
 		P_GET_STRUCT_REF(FVector,Z_Param_Out_Posicion);
 		P_GET_STRUCT_REF(FRotator,Z_Param_Out_Rotacion);
-		P_GET_OBJECT(UObject,Z_Param_WorldContextObject);
+		P_GET_OBJECT(UObject,Z_Param_WorldReal);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(ANaveEnemiga**)Z_Param__Result=UNaveEnemigaFactory::CrearNaveEnemiga(Z_Param_ClaseNave,Z_Param_Out_Posicion,Z_Param_Out_Rotacion,Z_Param_WorldContextObject);
+		*(ANaveEnemiga**)Z_Param__Result=UNaveEnemigaFactory::CrearNaveEnemiga(Z_Param_NombreNave,Z_Param_Out_Posicion,Z_Param_Out_Rotacion,Z_Param_WorldReal);
 		P_NATIVE_END;
 	}
 	void UNaveEnemigaFactory::StaticRegisterNativesUNaveEnemigaFactory()
@@ -46,14 +45,14 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 	{
 		struct NaveEnemigaFactory_eventCrearNaveEnemiga_Parms
 		{
-			TSubclassOf<ANaveEnemiga>  ClaseNave;
+			FString NombreNave;
 			FVector Posicion;
 			FRotator Rotacion;
-			UObject* WorldContextObject;
+			UObject* WorldReal;
 			ANaveEnemiga* ReturnValue;
 		};
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_WorldContextObject;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_WorldReal;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Rotacion_MetaData[];
 #endif
@@ -62,7 +61,10 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Posicion_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Posicion;
-		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ClaseNave;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_NombreNave_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStrPropertyParams NewProp_NombreNave;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -70,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, ReturnValue), Z_Construct_UClass_ANaveEnemiga_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_WorldContextObject = { "WorldContextObject", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, WorldContextObject), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_WorldReal = { "WorldReal", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, WorldReal), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Rotacion_MetaData[] = {
 		{ "NativeConst", "" },
@@ -83,13 +85,18 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Posicion = { "Posicion", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, Posicion), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Posicion_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Posicion_MetaData)) };
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_ClaseNave = { "ClaseNave", nullptr, (EPropertyFlags)0x0014000000000080, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, ClaseNave), Z_Construct_UClass_ANaveEnemiga_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_NombreNave_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_NombreNave = { "NombreNave", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(NaveEnemigaFactory_eventCrearNaveEnemiga_Parms, NombreNave), METADATA_PARAMS(Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_NombreNave_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_NombreNave_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_ReturnValue,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_WorldContextObject,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_WorldReal,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Rotacion,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_Posicion,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_ClaseNave,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::NewProp_NombreNave,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga_Statics::Function_MetaDataParams[] = {
@@ -126,7 +133,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Galaga_USFX,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UNaveEnemigaFactory_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga, "CrearNaveEnemiga" }, // 3206016259
+		{ &Z_Construct_UFunction_UNaveEnemigaFactory_CrearNaveEnemiga, "CrearNaveEnemiga" }, // 2707285394
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UNaveEnemigaFactory_Statics::Class_MetaDataParams[] = {
@@ -162,7 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaFactory() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UNaveEnemigaFactory, 3176714178);
+	IMPLEMENT_CLASS(UNaveEnemigaFactory, 362781258);
 	template<> GALAGA_USFX_API UClass* StaticClass<UNaveEnemigaFactory>()
 	{
 		return UNaveEnemigaFactory::StaticClass();

@@ -17,5 +17,5 @@ class GALAGA_USFX_API UNaveEnemigaFactory : public UObject
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "Nave Enemiga FABRICA")
-		static ANaveEnemiga* CrearNaveEnemiga(TSubclassOf<ANaveEnemiga> ClaseNave, const FVector& Posicion, const FRotator& Rotacion, UObject* WorldContextObject);
+		static ANaveEnemiga* CrearNaveEnemiga(const FString& NombreNave, const FVector& Posicion, const FRotator& Rotacion, UObject* WorldReal);
 };
