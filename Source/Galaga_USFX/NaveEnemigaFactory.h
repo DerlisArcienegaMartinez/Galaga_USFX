@@ -10,12 +10,23 @@
 /**
  * 
  */
+ /*Tipo enumerado(uint8) para representar 
+ diferentes tipos de NavesEnemigas*/
+UENUM(BlueprintType)
+enum class ETipoNavesEnemigas : uint8
+{
+	Caza,
+	Transporte,
+	Nodriza
+};
+
 UCLASS()
 class GALAGA_USFX_API UNaveEnemigaFactory : public UObject
 {
 	GENERATED_BODY()
 
 public:
+	//Crea nuevas instancias de NaveEnemiga con nombre especifico, posicion y rotacion.
 	UFUNCTION(BlueprintCallable, Category = "Nave Enemiga FABRICA")
-		static ANaveEnemiga* CrearNaveEnemiga(const FString& NombreNave, const FVector& Posicion, const FRotator& Rotacion, UObject* WorldReal);
+		static ANaveEnemiga* CrearNaveEnemiga(ETipoNavesEnemigas TipoNave, const FVector& Posicion, const FRotator& Rotacion, UObject* WorldReal);
 };
